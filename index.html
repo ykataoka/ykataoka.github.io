@@ -1,59 +1,23 @@
 ---
 layout: default
-title: Jekyll Themes
 ---
 
-<div class="gallery">
-	{% for post in paginator.posts %}
-		<div class="item">
-			<a class="item-inner" href="{{ post.url }}">
-				<div class="item-image"><img src="/thumbnails/{{ post.thumbnail }}"></div>
-				<div class="item-name">{{ post.title }}</div>
-			</a>
-		</div>
-	{% endfor %}
-</div>
+<div class="mdl-grid">
+  {% for post in site.posts %}
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-phone post-block">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        <div class="post-card mdl-shadow--2dp">
+          <img src="./assets/images/{{ post.image }}"/>
+          <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">{{ post.title }}</h2>
+          </div>
 
-<!-- Pager -->
-
-<div class="row-fluid">
-  <div class="span12">
-    <div class="pagination">
-      <ul>
-        {% if paginator.previous_page %}
-
-          {% if paginator.previous_page == 1 %}
-            <li><a href="/">Prev</a></li>
-          {% else %}
-            <li><a href="/page{{ paginator.previous_page }}">Prev</a></li>
-          {% endif %}
-
-        {% else %}
-          <li><span class="disabled">Prev</span></li>
-        {% endif %}
-
-        {% if paginator.page == 1 %}
-          <li><span class="active">1</span></li>
-        {% else %}
-          <li><a href="/">1</a></li>
-        {% endif %}
-
-        {% for count in (2..paginator.total_pages) %}
-
-          {% if count == paginator.page %}
-            <li><span class="active">{{ count }}</span></li>
-          {% else %}
-            <li><a href="/page{{ count }}">{{ count }}</a></li>
-          {% endif %}
-        {% endfor %}
-
-        {% if paginator.next_page %}
-          <li><a href="/page{{ paginator.next_page }}">Next</a></li>
-        {% else %}
-          <li><span class="disabled">Next</span></li>
-        {% endif %}
-      </ul>
-    </div>
+          <div class="mdl-card__supporting-text">
+            {{ post.description }}
+          </div>
+          <div class="post-card__fade"></div>
+        </div>
+      </a>
   </div>
+  {% endfor %}
 </div>
-
