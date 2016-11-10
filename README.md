@@ -1,20 +1,18 @@
-# Jekyll Smart Material
+# front cover jekyll theme
 
-Slick Material Design theme for [Jekyll](https://jekyllrb.com/) powered by [Material Design Lite v.1.2.1](https://getmdl.io/components/index.html).
-
-## Live demo
-
-[https://ssokurenko.github.io/jekyll-smart-material](https://ssokurenko.github.io/jekyll-smart-material/)
-
-![screenshot](screenshot.png)
+## Why choose this jekyll theme for your front page?
+* You don't have to modify any HTML, everything can be modified in config.yml.
+* Very lightweight. No Javascript, No Bootstrap etc..
+* MIT licensed.
 
 
-## Local deployment for development and testing
+## See it in action
+<a href="https://dashingcode.github.io/front-cover/">Live demo page</a>
 
-Fork or clone the project: `https://github.com/ssokurenko/jekyll-smart-material.git`
+## Credits
+The background image that was used as an example comes from Tom Hall.
+You can find it on <a href="https://flic.kr/p/pqEPBb">Flickr</a>.
+It's licensed under Creative-Commons.
 
-Install Jekyll: `sudo gem install jekyll`
+This theme makes use of the amazing <a href="http://fontawesome.io/">Font Awesome</a> icons.
 
-Open the project folder: `cd jekyll-smart-material`
-
-Run local Jekyll server: `jekyll serve`, it will be available at: [http://127.0.0.1:4000/](http://127.0.0.1:4000/).
