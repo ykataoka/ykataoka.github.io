@@ -132,7 +132,6 @@ div.stars {
   width: 270px;
   /*  height:30px; */
   display: inline-block;
-  align-content: center;
 }
 
 input.star { display: none; }
