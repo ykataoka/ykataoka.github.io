@@ -66,6 +66,7 @@ li {
 
 .dl-share .btn {
     min-width: 120px;
+/*    min-width: 500px;  */
 }
 
 .signature {
@@ -132,7 +133,6 @@ div.stars {
   width: 270px;
   /*  height:30px; */
   display: inline-block;
-  align-content: center;
 }
 
 input.star { display: none; }
