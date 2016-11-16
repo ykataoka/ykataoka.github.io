@@ -161,7 +161,7 @@ background-size : cover;
 min-height : 500px;
 }
 #abt_sec {
-padding : 70px 0;
+padding : 10px 0;
 }
 .happy_use {
 float : right;
@@ -187,7 +187,7 @@ margin-top : 19px;
 width : 76px;
 }
 #pricing_sec {
-padding : 70px 0;
+padding : 10px 0;
 }
 .title_sec {
 margin : 0 auto;
@@ -208,7 +208,7 @@ text-align : center;
 padding-top : 30px;
 }
 .skills-wrap .container {
-padding : 70px 0;
+padding : 10px 0;
 }
 .progress {
 height : 35px;
@@ -427,7 +427,7 @@ font-size : 35px;
 margin-top : 10px;
 }
 #pr_sec {
-padding : 70px 0;
+padding : 10px 0;
 }
 .service {
 
@@ -480,10 +480,10 @@ top : -50px;
 }
 #protfolio_sec {
 background : none 0 0 repeat scroll #f0f0f0;
-padding : 70px 0;
+padding : 10px 0;
 }
 #tm_sec {
-padding : 70px 0;
+padding : 10px 0;
 }
 .sngl_team h3 {
 font-size : 14px;
@@ -713,7 +713,7 @@ margin-top : 30px;
 }
 #clt_sec {
 background : #F0F0F0;
-padding : 70px 0;
+padding : 10px 0;
 }
 .owl-item .sngl_clt a {
 text-align : left;
@@ -728,7 +728,7 @@ width : 100px;
 display : none;
 }
 #ctn_sec {
-padding : 70px 0;
+padding : 10px 0;
 }
 #cnt_form .btn {
 background : #353638;
@@ -802,7 +802,7 @@ font-weight : normal;
 text-transform : uppercase;
 }
 #ft_sec {
-padding : 70px 0;
+padding : 10px 0;
 }
 .copy_right {
 margin : 0;

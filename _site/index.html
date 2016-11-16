@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="css/front.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <script type="text/javascript">
+    function myhref(web){
+      window.location.href = web;}
+    </script>    
   </head>
   <body>
     <div class="content">
@@ -30,13 +35,10 @@
       <h1>Yasu Kataoka</h1>
       <h3>Data Scientist in IoT / Robotics</h3>
 
-
       <div class="container text-center">
-	
 	<!-- About Me -->
-	<div class="card-container">
-	  <a href="aboutme.html">
-	    <div class="card">
+	<div class="card-container" onclick="myhref('aboutme.html');">
+	    <div class="card" >
 	      <div class="front" style="background:#C0C0C0;">
 		<span class="fa fa-user"
 			style="font-size: 200%"></span>
@@ -44,26 +46,23 @@
 	      <div class="back" style="background:#C0C0C0;">
 		about me</div>
 	    </div>
-	  </a>
 	</div>
+	</a>
 	
 	<!-- Publication -->
-	<div class="card-container">
-	  <a href="project.html">
-	    <div class="card">
-	      <div class="front">
-		<span class="fa fa-laptop"
-			style="font-size: 180%"></span>
-	      </div>
-	      <div class="back">survey me</div>
+	<div class="card-container" onclick="myhref('project.html');">
+	  <div class="card">
+	    <div class="front">
+	      <span class="fa fa-laptop"
+		      style="font-size: 180%"></span>
 	    </div>
-	  </a>
+	    <div class="back">survey me</div>
+	  </div>
 	</div>
 	
 	<!-- Linkedin -->
         
-	<div class="card-container">
-	  <a href="https://linkedin.com/in/yasuyuki-kataoka-07a54b1a">
+	<div class="card-container" onclick="myhref('https://linkedin.com/in/yasuyuki-kataoka-07a54b1a');">
 	    <div class="card">
 	      <div class="front" style="background:#0077B5;">
 		<span class="fa fa-linkedin"
@@ -72,171 +71,94 @@
 	      <div class="back" style="background:#0077B5;">
 		connect me</div>
 	    </div>
-	  </a>
 	</div>
         
 
 	<!-- github -->
         
-	<div class="card-container">
-	  <a href="https://github.com/ykataoka">
-	    <div class="card">
-	      <div class="front" style="background:#000000;">
-		<span class="fa fa-github"
-			style="font-size: 200%"></span>
-	      </div>
-	      <div class="back" style="background:#000000;">
-		fork me</div>
+	<div class="card-container" onclick="myhref('https://github.com/ykataoka');">
+	  <div class="card">
+	    <div class="front" style="background:#000000;">
+	      <span class="fa fa-github"
+		      style="font-size: 200%"></span>
 	    </div>
-	  </a>
+	    <div class="back" style="background:#000000;">
+	      fork me</div>
+	  </div>
 	</div>
         
 	
 	<!-- Mail -->
         
-	<div class="card-container">
-	  <a href="mailto:yk1002jp@gmail.com">
-	    <div class="card">
-	      <div class="front" style="background:#006400;">
-		<span class="fa fa-2x fa-envelope"
-			style="font-size: 180%"></span>
-	      </div>
-	      <div class="back" style="background:#006400;">
-		contact me</div>
+	<div class="card-container" onclick="myhref('mailto:yk1002jp@gmail.com');">
+	  <div class="card">
+	    <div class="front" style="background:#006400;">
+	      <span class="fa fa-2x fa-envelope"
+		      style="font-size: 180%"></span>
 	    </div>
-	  </a>
+	    <div class="back" style="background:#006400;">
+	      contact me</div>
+	  </div>
 	</div>
         
-      <!-- </div>  -->
 
-      <!-- Change Line here -->
-	<!-- <div class="container text-center">	        -->
 	<!-- Blog -->
         
-	<div class="card-container">
-	  <a href="https://github.com/ykataoka">
-	    <div class="card">
-	      <div class="front" style="background:#FE1106;">
-		<span class="fa fa-book"
-			style="font-size: 200%"></span>
-	      </div>
-	      <div class="back" style="background:#FE1106;">
-		read me</div>
+	<div class="card-container" onclick="https://github.com/ykataoka">
+	  <div class="card">
+	    <div class="front" style="background:#FE1106;">
+	      <span class="fa fa-book"
+		      style="font-size: 200%"></span>
 	    </div>
-	  </a>
+	    <div class="back" style="background:#FE1106;">
+	      read me</div>
+	  </div>
 	</div>
         
 	
 	<!-- Facebook -->
         
-	<div class="card-container">
-	  <a href="https://facebook.com/Yasu.K">
-	    <div class="card">
-	      <div class="front" style="background:#305097;">
-		<span class="fa fa-2x fa-facebook"
-			style="font-size: 200%"></span>
-	      </div>
-	      <div class="back" style="background:#305097;">
-		add me</div>
+	<div class="card-container" onclick="https://facebook.com/Yasu.K">
+	  <div class="card">
+	    <div class="front" style="background:#305097;">
+	      <span class="fa fa-2x fa-facebook"
+		      style="font-size: 200%"></span>
 	    </div>
-	  </a>
+	    <div class="back" style="background:#305097;">
+	      add me</div>
+	  </div>
 	</div>
         
 	
 	<!-- Flickr -->
         
-	<div class="card-container">
-	  <a href="https://flickr.com/photos/UNDER_CONSTRUCTION">
-	    <div class="card">
-	      <div class="front" style="background:#ff0084;">
-		<span class="fa fa-camera"
-			style="font-size: 180%"></span>
-	      </div>
-	      <div class="back"  style="background:#ff0084;">
-		explore me</div>
+	<div class="card-container" onclick="https://flickr.com/photos/UNDER_CONSTRUCTION">
+	  <div class="card">
+	    <div class="front" style="background:#ff0084;">
+	      <span class="fa fa-camera"
+		      style="font-size: 180%"></span>
 	    </div>
-	  </a>
+	    <div class="back"  style="background:#ff0084;">
+	      explore me</div>
+	  </div>
 	</div>
         
 	
 	<!-- Twitter -->
         
-	<div class="card-container">
-	  <a href="https://twitter.com/YasuyukiKataoka">
-	    <div class="card">
-	      <div class="front" style="background:#00aced;">
-		<span class="fa fa-2x fa-twitter"
-			style="font-size: 200%"></span>
-	      </div>
-	      <div class="back"  style="background:#00aced;">
-		follow me</div>
+	<div class="card-container" onclick="https://twitter.com/YasuyukiKataoka">
+	  <div class="card">
+	    <div class="front" style="background:#00aced;">
+	      <span class="fa fa-2x fa-twitter"
+		      style="font-size: 200%"></span>
 	    </div>
-	  </a>
+	    <div class="back"  style="background:#00aced;">
+	      follow me</div>
+	  </div>
 	</div>
         
 	
-      </div>
-
-      <!-- 
-      <ul>
-        
-        <li><a class="fa fa-2x fa-github" href="https://github.com/ykataoka"><span class="description">GitHub</span></a></li>
-        
-
-        
-
-        
-        <li><a class="fa fa-2x fa-facebook" href="https://facebook.com/Yasu.K"><span class="description">Facebook</span></a></li>
-        
-
-        
-
-        
-        <li><a class="fa fa-2x fa-twitter" href="https://twitter.com/YasuyukiKataoka"><span class="description">Twitter</span></a></li>
-        
-
-        
-        <li><a class="fa fa-2x fa-google-plus" href="https://plus.google.com/+UNDER_CONSTRUCTION"><span class="description">Google +</span></a></li>
-        
-
-        
-        <li><a class="fa fa-2x fa-linkedin" href="https://linkedin.com/in/yasuyuki-kataoka-07a54b1a"><span class="description">LinkedIn</span></a></li>
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-        <li><a class="fa fa-2x fa-tags" href="UNDER_CONSTRUCTION"><span class="description">Blog</span></a></li>
-        
-
-        
-        <li><a class="fa fa-2x fa-envelope" href="mailto:yk1002jp@gmail.com"><span class="description">Email</span></a></li>
-        
-
-        
-      </ul>
-      -->
-      
+      </div>      
     </div>
 
   </body>
