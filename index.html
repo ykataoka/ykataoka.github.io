@@ -17,9 +17,19 @@ permalink: /
     <link rel="shortcut icon" href="{{ site.favicon_img_path }}" />
     {% endif %}
     <link rel="stylesheet" href="{{ "css/front.css" | prepend: site.baseurl }}">
+
+    <!-- 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Suez+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya:900|Suez+One" rel="stylesheet">    -->
+
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:900|Exo+2:800" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Kristi|Alegreya+Sans:300' rel='stylesheet' type='text/css'>    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+    
     <script type="text/javascript">
     function myhref(web){
       window.location.href = web;}
@@ -61,9 +71,10 @@ $(document).on('touchstart mousedown','div',linkTouchStart);
       <img src="{{ site.avatar_img_path }}" id="avatar">
       {% endif %}
 
-      <h1>{{ site.name }}</h1>
-      <h3>{{ site.description }}</h3>
-
+      <h1 style="font-family: 'Cinzel', serif;font-size:48px;">{{ site.name }}</h1>
+      
+      <h3 style="font-family: 'Exo 2', sans-serif;font-size:36px;">{{ site.description }}</h3>
+      
       <div class="container text-center">
 	<!-- About Me -->
 	<div class="card-container"

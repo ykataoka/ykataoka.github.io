@@ -3,7 +3,8 @@ body {
     color: #757575;
     font-family: 'Alegreya Sans', sans-serif;
     letter-spacing: 2px;
-    padding-bottom: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .container {
@@ -12,7 +13,6 @@ body {
     margin: 50px auto;
 /*    border: 1px solid #a5d4fc; */
     border: 3px solid #1a96db;
-
 }
 
 img {
