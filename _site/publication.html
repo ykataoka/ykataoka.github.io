@@ -51,6 +51,44 @@
     <!-- FONTS & ICONS -->
     <link href='//fonts.googleapis.com/css?family=Kristi|Alegreya+Sans:300' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/appear.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <!--  
+    <script src="js/jquery.nicescroll.min.js"></script>
+    -->    
+    <script src="js/jquery.easing.min.js"></script>
+    <!--  
+    <script src="js/scrolling-nav.js"></script>
+    -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    
+    
+    <!-- スムーズスクロール部分の記述 -->
+    <script>
+    $(function(){
+      // #で始まるアンカーをクリックした場合に処理
+      $('a[href^=#]').click(function() {
+	// スクロールの速度
+	var speed = 400; // ミリ秒
+	// アンカーの値取得
+	var href= $(this).attr("href");
+	// 移動先を取得
+	var target = $(href == "#" || href == "" ? 'html' : href);
+	// 移動先を数値で取得
+	var position = target.offset().top;
+	// スムーススクロール
+	$('body,html').animate({scrollTop:position}, speed, 'swing');
+	return false;
+      });
+    });
+    </script>
     
   </head>
   <body style="font-family: 'Alegreya Sans', sans-serif;">
@@ -73,10 +111,10 @@
     <section id="protfolio_sec">
       <div class="container">
 	<div class="row">
-	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
+	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
 	    <!-- Home -->
-            <div class="col-xs2 col-sm-2 text-left dl-share">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 text-left dl-share">
               <a class="btn btn-success" href="index.html" style="position: relative">
 		<span class="fa fa-home"></span>
 		Home
@@ -84,22 +122,38 @@
 	    </div>
 	  
 	    <!-- Title -->
-	    <div class="col-sm-8 col-lg-8">
+	    <div class="col-xs-8 col-sm-8 col-md-12 col-lg-8">
 	      <div class="title_sec">
 		<h1>Achievement</h1>
 		<div class="portfolio-filter text-uppercase text-center">
 		  <ul class="filter" style="padding-left:0px">
 		    <li class="active" data-filter="*"
-			    style="min-width:200px;">Publication</li>
+			    style="min-width:200px;">
+		      <a href="#publication">	
+			Publication
+		      </a>			
+		    </li>
 		    <li data-filter=".data-science"
-			    style="min-width:200px;">Awards & Honors</li>
+			    style="min-width:200px;">
+		      <a href="#awards">	
+			Awards & Honors
+		      </a>			
+		    </li>
+		    <li data-filter=".data-science"
+			    style="min-width:200px;">
+		      <a href="#awards">	
+			Activities
+		      </a>			
+		    </li>
 		  </ul>
 		</div>			
 	      </div>
 	    </div>
+
 	    <!-- Home -->
-            <div class="col-xs-2 col-sm-2 text-right dl-share">
-              <a class="btn btn-success" href="publication.html"
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6
+			text-right dl-share">
+              <a class="btn btn-success" href="project.html"
 		      align="right">
 		<span class="fa fa-file-code-o"></span>
 		Project
@@ -108,7 +162,7 @@
 	  </div>
 
 	  <!-- Publication List start here-->
-	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
+	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs12 " id="publication">
 	    <hr>
 
 	    <div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
@@ -297,7 +351,7 @@
 	      </div>
 	    </div>
 
-	    <hr>
+	    <br>
 	    <!-- DATA SCIENCE -->
             <div class="row mobmid">
 	    
@@ -624,22 +678,6 @@
     </footer>
     <!-- End footer Section -->
     
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/appear.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <!--  
-    <script src="js/jquery.nicescroll.min.js"></script>
-    -->    
-    <script src="js/jquery.easing.min.js"></script>
-    <!--  
-    <script src="js/scrolling-nav.js"></script>
-    -->
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
 
 
     <script type="text/javascript">

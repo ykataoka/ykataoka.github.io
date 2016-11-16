@@ -26,9 +26,26 @@
     <!-- FONTS & ICONS -->
     <link href='//fonts.googleapis.com/css?family=Kristi|Alegreya+Sans:300' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    
+
+    <!-- hover on smartphone -->
+    <script>
+    $( 'a' )
+    .bind( 'touchstart', function(){
+    $( this ).addClass( 'hover' );
+    }).bind( 'touchend', function(){
+    $( this ).removeClass( 'hover' );
+    });
+    </script>
+
+    <style>
+    a.hover {
+    text-decoration: underline;
+    }
+    </style>
   </head>
+
   <body style="font-family: 'Alegreya Sans', sans-serif;">
+    <a> hoge </a>
     <!-- start preloader -->
     <div id="loader-wrapper">
       <div class="logo"></div>

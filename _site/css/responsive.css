@@ -1,8 +1,8 @@
-@media only screen and (max-width: 980px) {
-    .dl-share {
+@media only screen and (max-width: 375px) {
+/*    .dl-share {
         display: none;
     }
-    
+*/    
     .year {
         text-align: left;
     }
