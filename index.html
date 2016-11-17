@@ -17,50 +17,48 @@ permalink: /
     <link rel="shortcut icon" href="{{ site.favicon_img_path }}" />
     {% endif %}
     <link rel="stylesheet" href="{{ "css/front.css" | prepend: site.baseurl }}">
-
-    <!-- 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Suez+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya:900|Suez+One" rel="stylesheet">    -->
-
+    
     <link href="https://fonts.googleapis.com/css?family=Cinzel:900|Exo+2:800" rel="stylesheet">
-    <link href='//fonts.googleapis.com/css?family=Kristi|Alegreya+Sans:300' rel='stylesheet' type='text/css'>    
+    <link href="https://fonts.googleapis.com/css?family=Kristi|Alegreya+Sans:300" rel='stylesheet' type='text/css'>  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <script src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript">
     function myhref(web){
-      window.location.href = web;}
-    </script>
+      window.location.href = web;
+    }
 
-    <script>
-    
     var linkTouchStart = function(){
       thisAnchor = $(this);
+      console.log('thisAnchor');
+
       touchPos = thisAnchor.offset().top;
+      console.log('hoge');
       moveCheck = function(){
+	console.log('in moveCheck');
         nowPos = thisAnchor.offset().top;
         if(touchPos == nowPos){
-          thisAnchor.addClass("hover");
-        }
+          thisAnchor.css("transform","rotateY(180deg)");
+	}
       }
-      setTimeout(moveCheck,100);
+      setTimeout(
+	moveCheck, 100);
     }
+    
     var linkTouchEnd = function(){
       thisAnchor = $(this);
       hoverRemove = function(){
+	console.log('in hoverRomove');
         thisAnchor.removeClass("hover");
-      };
-      setTimeout(hoverRemove,2000);
+      }
+      setTimeout(hoverRemove,500);
     }
     
-    $(document).on('touchstart mousedown','div',linkTouchStart);
-    $(document).on('touchend mouseup','div',linkTouchEnd);
-    
+    $(document).on('touchstart','.card-container',linkTouchStart);
+    $(document).on('touchend','.card-container',linkTouchEnd);
     </script>
   </head>
+
   <body>
     <div class="content">
       {% if site.front_img %}
