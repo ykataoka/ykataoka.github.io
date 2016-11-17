@@ -1,16 +1,19 @@
 # Site settings
 name: Yasu Kataoka
 description: "Data Scientist in IoT / Robotics"
-url: ""
+url: "ykataoka.github.io"
 
 # Delete the lines you don't need
 # about 5 elements are recomended
 github_username:  ykataoka
 linkedin_username: yasuyuki-kataoka-07a54b1a
+email: yk1002jp@gmail.com
 facebook_username: Yasu.K
 twitter_username: YasuyukiKataoka
-flickr_username: UNDER_CONSTRUCTION
-google_plus_username: UNDER_CONSTRUCTION
+blog_url: "UNDER_CONSTRUCTION"
+
+#flickr_username: UNDER_CONSTRUCTION
+#google_plus_username: UNDER_CONSTRUCTION
 #codepen_username: your_codepen_username_goes_here
 #vk_username: your_vk_username_goes_here
 #vine_username:  your_vine_username_goes_here
@@ -23,8 +26,6 @@ google_plus_username: UNDER_CONSTRUCTION
 #tumblr_username: your_tumblr_username_goes_here
 #weibo_username: your_weibo_username_goes_here
 #lastfm_username: your_lastfm_username_goes_here
-blog_url: "UNDER_CONSTRUCTION"
-email: yk1002jp@gmail.com
 #public_key_url: "https://raw.pastebin.com/LINK-TO-PUBLIC-KEY"
 
 avatar: yes
