@@ -33,7 +33,7 @@
     </script>
 
     <script>
-
+    
     var linkTouchStart = function(){
       thisAnchor = $(this);
       touchPos = thisAnchor.offset().top;
@@ -50,7 +50,7 @@
       hoverRemove = function(){
         thisAnchor.removeClass("hover");
       };
-      setTimeout(hoverRemove,500);
+      setTimeout(hoverRemove,2000);
     }
     
     $(document).on('touchstart mousedown','div',linkTouchStart);
@@ -69,9 +69,7 @@
       
 
       <h1 style="font-family: 'Cinzel', serif;font-size:48px;">Yasu Kataoka</h1>
-      
       <h3 style="font-family: 'Exo 2', sans-serif;font-size:36px;">Data Scientist in IoT / Robotics</h3>
-      
       <div class="container text-center">
 
 	<!-- About Me -->
@@ -91,11 +89,23 @@
 	<!-- Publication -->
 	<div class="card-container" onclick="myhref('publication.html');">
 	  <div class="card">
-	    <div class="front">
+	    <div class="front" style="background:#32CD32">
 	      <span class="fa fa-laptop"
 		      style="font-size: 180%"></span>
 	    </div>
-	    <div class="back">survey me</div>
+	    <div class="back" style="background:#32CD32">
+	      survey me</div>
+	  </div>
+	</div>
+
+	<!-- Project -->
+	<div class="card-container" onclick="myhref('project.html');">
+	  <div class="card">
+	    <div class="front">
+	      <span class="fa fa-code"
+		      style="font-size: 180%"></span>
+	    </div>
+	    <div class="back">enjoy me</div>
 	  </div>
 	</div>
 	
@@ -158,17 +168,6 @@
 	<!-- Flickr -->
 	<!-- 
         
-	<div class="card-container" onclick="myhref('https://flickr.com/photos/UNDER_CONSTRUCTION')">
-	  <div class="card">
-	    <div class="front" style="background:#ff0084;">
-	      <span class="fa fa-camera"
-		      style="font-size: 180%"></span>
-	    </div>
-	    <div class="back"  style="background:#ff0084;">
-	      explore me</div>
-	  </div>
-	</div>
-        
 	-->
 	
 	<!-- Twitter -->
@@ -201,6 +200,5 @@
 	
       </div>      
     </div>
-
   </body>
 </html>

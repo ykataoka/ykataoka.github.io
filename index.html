@@ -36,7 +36,7 @@ permalink: /
     </script>
 
     <script>
-
+    
     var linkTouchStart = function(){
       thisAnchor = $(this);
       touchPos = thisAnchor.offset().top;
@@ -53,7 +53,7 @@ permalink: /
       hoverRemove = function(){
         thisAnchor.removeClass("hover");
       };
-      setTimeout(hoverRemove,500);
+      setTimeout(hoverRemove,2000);
     }
     
     $(document).on('touchstart mousedown','div',linkTouchStart);
@@ -72,9 +72,7 @@ permalink: /
       {% endif %}
 
       <h1 style="font-family: 'Cinzel', serif;font-size:48px;">{{ site.name }}</h1>
-      
       <h3 style="font-family: 'Exo 2', sans-serif;font-size:36px;">{{ site.description }}</h3>
-      
       <div class="container text-center">
 
 	<!-- About Me -->
@@ -94,11 +92,23 @@ permalink: /
 	<!-- Publication -->
 	<div class="card-container" onclick="myhref('publication.html');">
 	  <div class="card">
-	    <div class="front">
+	    <div class="front" style="background:#32CD32">
 	      <span class="fa fa-laptop"
 		      style="font-size: 180%"></span>
 	    </div>
-	    <div class="back">survey me</div>
+	    <div class="back" style="background:#32CD32">
+	      survey me</div>
+	  </div>
+	</div>
+
+	<!-- Project -->
+	<div class="card-container" onclick="myhref('project.html');">
+	  <div class="card">
+	    <div class="front">
+	      <span class="fa fa-code"
+		      style="font-size: 180%"></span>
+	    </div>
+	    <div class="back">enjoy me</div>
 	  </div>
 	</div>
 	
@@ -204,6 +214,5 @@ permalink: /
 	
       </div>      
     </div>
-
   </body>
 </html>
