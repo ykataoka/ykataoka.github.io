@@ -8,8 +8,8 @@
 }
 .card{
     position:relative;
-    width:100px;
-    height:100px;
+    width:75px;
+    height:75px;
     transition:all 0.6s ease;
     transform-style:preserve-3d;
 }
@@ -18,9 +18,9 @@
     background:#FEC606;
     top:0;
     left:0;
-    width:100px;
-    height:100px;
-    border-radius:20px;
+    width:75px;
+    height:75px;
+    border-radius:15px;
     color:white;
     box-shadow:0 27px 55px 0 rgba(0,0,0,0.3),0 17px 17px 0 rgba(0,0,0,0.15);
     backface-visibility:hidden;
@@ -40,4 +40,6 @@
 .card-container:hover .card{
     transform:rotateY(180deg);
 }
-.back{transform:rotateY(180deg);}
+.back{
+    transform:rotateY(180deg);
+}
