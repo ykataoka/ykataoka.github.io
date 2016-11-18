@@ -22,39 +22,77 @@ permalink: /
     <link href="https://fonts.googleapis.com/css?family=Kristi|Alegreya+Sans:300" rel='stylesheet' type='text/css'>  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="js/jquery-1.11.3.min.js"></script>
+
+
     <script type="text/javascript">
     function myhref(web){
       window.location.href = web;
     }
-
-    var linkTouchStart = function(){
-      thisAnchor = $(this);
-      console.log('thisAnchor');
-
-      touchPos = thisAnchor.offset().top;
-      console.log('hoge');
-      moveCheck = function(){
-	console.log('in moveCheck');
-        nowPos = thisAnchor.offset().top;
-        if(touchPos == nowPos){
-          thisAnchor.css("transform","rotateY(180deg)");
-	}
-      }
-      setTimeout(
-	moveCheck, 100);
-    }
     
-    var linkTouchEnd = function(){
-      thisAnchor = $(this);
-      hoverRemove = function(){
-	console.log('in hoverRomove');
-        thisAnchor.removeClass("hover");
-      }
-      setTimeout(hoverRemove,500);
-    }
+//    var linkTouchStart = function(){
+//      thisAnchor = $(this);
+//      console.log(thisAnchor);
+//      touchPos = thisAnchor.offset().top;
+//      console.log('hoge');
+//      moveCheck = function(){
+//	console.log('in moveCheck');
+//        nowPos = thisAnchor.offset().top;
+//        if(touchPos == nowPos){
+////          thisAnchor.css("transform","rotateY(180deg)");
+//	}
+//      }
+//      setTimeout(
+//	moveCheck, 100);
+//    }
+//    
+//    var linkTouchEnd = function(){
+//      thisAnchor = $(this);
+//      hoverRemove = function(){
+//	console.log('in hoverRomove');
+//        thisAnchor.removeClass("hover");
+//      }
+//      setTimeout(hoverRemove,500);
+//    }
+//    
+//    $(document).on('touchstart','.card-container',linkTouchStart);
+//    $(document).on('touchend','.card-container',linkTouchEnd);
+
+    $(document).ready(function(){
+      $('div.card-container').on('touchstart', function (e) {
+	'use strict'; //satisfy code inspectors
+	var link = $(this).children('.card'); //preselect the link
+	console.log('hoge');
+        link.addClass('tapping');
+//        $('div.card').not(link).removeClass('tapping');
+//	e.preventDefault();
+
+	
+//	if (link.hasClass('tapping')) {
+//          return true;
+//	} else {
+//          return false;
+//	}
+
+//	if (link.hasClass('tapping')) {
+//          return true;
+//	} else {
+//          link.addClass('tapping');
+//          $('div.card').not(link).removeClass('tapping');
+//	  e.preventDefault();
+//          return false;
+//	}
+	
+      });
+    });
     
-    $(document).on('touchstart','.card-container',linkTouchStart);
-    $(document).on('touchend','.card-container',linkTouchEnd);
+//    
+//    $(document).ready(function() {
+//      $('.hover').bind('touchstart touchend', function(e) {
+//        e.preventDefault();
+//        $(this).toggleClass('hover_effect');
+//      });
+//    });
+    
     </script>
   </head>
 
@@ -63,7 +101,7 @@ permalink: /
       {% if site.front_img %}
       <img src="{{ site.front_img_path }}" id="fullscreen">
       {% endif %}
-
+      
       {% if site.avatar %}
       <img src="{{ site.avatar_img_path }}" id="avatar">
       {% endif %}
