@@ -3,123 +3,59 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Projects</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Yasuyuki Kataoka">
+    <title>Projects</title>
+    
+    <!-- favicon -->
+    <link rel="shortcut icon" href="imgs/c_y.ico" />
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!--[if lt IE 9]> <script src="js/html5shiv.js"></script> 
-    <script src="js/respond.min.js"></script> <![endif]--> 		
-    <!-- Place favicon.ico in the root directory -->
-    <!-- 
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-    -->
-    <link href='//fonts.googleapis.com/css?family=Kristi|Alegreya+Sans:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css">
+    <!-- fonts -->
+    <link href='//fonts.googleapis.com/css?family=Kristi|Alegreya+Sans:300'
+	    rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/earlyaccess/notosansjapanese.css"
+	    rel='stylesheet' type='text/css'>
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style_publication.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css"> 
     <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/style_project.css">
-    <link rel="stylesheet" href="css/style_aboutme.css">
-    
-    <style>
-    .paper-title{
-      font-family: 'Alegreya Sans', sans-serif;
-      font-weight: bold;
-      font-size: 1.4em;
-      text-transform: none;
-      letter-spacing: 2px;
-      margin: 3px 0 0;"
-    }
-    .paper-author{
-      font-family: 'Alegreya Sans', sans-serif;
-      font-size: 1.3em;
-      text-transform: none;
-      letter-spacing: 2px;
-      margin: 3px 0 0;
-      color: #337ab7;
-    }
-    .paper-conference{
-      font-family: 'Alegreya Sans', sans-serif;
-      font-size: 1.3em;
-      text-transform: none;
-      letter-spacing: 2px;
-      margin: 3px 0 20px;"
-    }
-    .paper-title_j{
-      font-family: 'Noto Sans Japanese', serif;
-      font-weight: 300;
-      font-size: 1.4em;
-      text-transform: none;
-      letter-spacing: 2px;
-      margin: 3px 0 0;"
-    }
-    .paper-author_j{
-      font-family: 'Noto Sans Japanese', serif;
-      font-weight: 200;
-      font-size: 1.2em;
-      text-transform: none;
-      letter-spacing: 2px;
-      margin: 10px 0 0;
-      color: #337ab7;
-    }
-    .paper-conference_j{
-      font-family: 'Noto Sans Japanese', serif;
-      font-weight: 200;
-      font-size: 1.2em;
-      text-transform: none;
-      letter-spacing: 2px;
-      margin: 10px 0 20px;"
-    }
-    </style>
-    
-    <!-- FONTS & ICONS -->
-    <link href='//fonts.googleapis.com/css?family=Kristi|Alegreya+Sans:300' rel='stylesheet' type='text/css'>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
+    <!-- js -->
     <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/appear.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/waypoints.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    <!--  
-    <script src="js/jquery.nicescroll.min.js"></script>
-    -->    
     <script src="js/jquery.easing.min.js"></script>
-    <!--  
-    <script src="js/scrolling-nav.js"></script>
-    -->
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     
-        <!-- スムーズスクロール部分の記述 -->
+    <!-- smooth scroll from top menu -->
     <script>
     $(function(){
-      // #で始まるアンカーをクリックした場合に処理
       $('a[href^=#]').click(function() {
-	// スクロールの速度
-	var speed = 400; // ミリ秒
-	// アンカーの値取得
+	var speed = 500; // msec
 	var href= $(this).attr("href");
-	// 移動先を取得
 	var target = $(href == "#" || href == "" ? 'html' : href);
-	// 移動先を数値で取得
 	var position = target.offset().top;
-	// スムーススクロール
 	$('body,html').animate({scrollTop:position}, speed, 'swing');
 	return false;
       });
     });
     </script>
-    
   </head>
-  <body style="font-family: 'Alegreya Sans', sans-serif;">
+  
+  <body>
 
     <!-- start preloader -->
     <div id="loader-wrapper">
@@ -133,7 +69,6 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
-
     <!-- START -->
     <!-- start publication Section -->
     <section id="protfolio_sec">
@@ -191,7 +126,8 @@
 	  <!-- PUBLICATION START-->
 	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
 	    <hr>
-	    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="publication">
+	    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+		    id="publication">
 	      <div class="title_sec">
 		<h1>Publication</h1>
 	      </div>
@@ -692,11 +628,12 @@
 	  <!-- PUBLICATION END -->
 
 
-	  
+
 	  <!-- AWARDS & HONORS START HERE-->
 	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	    <hr>
-	    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="awards">
+	    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+		    id="awards">
 	      <div class="title_sec">
 		<h1>Awards & Honors</h1>
 	      </div>
@@ -704,10 +641,12 @@
 	    
 	    <!-- Honors -->
             <div class="row mobmid">	      
+
 	      <!-- icon -->
 	      <div class="col-sm-1">
 		<img class="top" src="imgs/scholarship.png" alt=""/>
 	      </div>
+
 	      <!-- Honors, scholarship / SIYSS -->
 	      <div class="col-sm-11">
 		<h3>Honors</h3>
@@ -1056,8 +995,7 @@
 	  </div>
 
 
-	  
-	  
+
 	  <!-- ACTIVITIES START -->
 	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	    <hr>
@@ -1168,62 +1106,13 @@
 	  <!-- ACTIVITIES END -->
 	  
 	</div>
+	<!-- FOOTER -->
+	<br>
+	<footer class="text-center">
+	  <p>&copy; Developed by Yasuyuki Kataoka</p>
+	</footer>
       </div>	    
     </section>
-
-
-    <!-- start footer Section -->
-    <footer id="ft_sec">
-      <div class="row">
-	<div class="col-lg-12">
-	  <ul class="copy_right">
-	    <li>developer by Yasu Kataoka</li>
-	  </ul>					
-	</div>	
-      </div>
-    </footer>
-    <!-- End footer Section -->
-    <script type="text/javascript">
-
-//    $(document).ready(function(){
-//      $('.show_hide').showHide({
-//	speed: 1000,  // speed you want the toggle to happen	
-//	easing: '',  // the animation effect you want. Remove this line if you dont want an effect and if you haven't included jQuery UI
-//	changeText: 1, // if you dont want the button text to change, set this to 0
-//	showText: 'View',// the button text to show when a div is closed
-//	hideText: 'Close' // the button text to show when a div is open
-//      }); 
-//    });
-
-    </script>
-    <script>
-//    jQuery(document).ready(function( $ ) {
-//      $('.counter').counterUp({
-//        delay: 10,
-//        time: 1000
-//      });
-//    });
-    </script>
-
-    <script>
-    //Hide Overflow of Body on DOM Ready //
-//    $(document).ready(function(){
-//      $("body").css("overflow", "hidden");
-//    });
-
-    // Show Overflow of Body when Everything has Loaded 
-//    $(window).load(function(){
-//      $("body").css("overflow", "visible");        
-//      var nice=$('html').niceScroll({
-//	cursorborder:"5",
-//	cursorcolor:"#00AFF0",
-//	cursorwidth:"3px",
-//	boxzoom:true, 
-//	autohidemode:true
-//      });
-
-//    });
-    </script>
 
   </body>
 </html>

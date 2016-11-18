@@ -99,6 +99,7 @@ permalink: /
 	</div>
 
 	<!-- Project -->
+	<!-- 
 	<div class="card-container" onclick="myhref('project.html');">
 	  <div class="card">
 	    <div class="front">
@@ -108,7 +109,22 @@ permalink: /
 	    <div class="back">enjoy me</div>
 	  </div>
 	</div>
+	-->
 	
+	<!-- github -->
+        {% if site.github_username %}
+	<div class="card-container" onclick="myhref('https://github.com/{{ site.github_username }}');">
+	  <div class="card">
+	    <div class="front" style="background:#000000;">
+	      <span class="fa fa-github"
+		      style="font-size: 200%"></span>
+	    </div>
+	    <div class="back" style="background:#000000;">
+	      fork me</div>
+	  </div>
+	</div>
+        {% endif %}
+
 	<!-- Linkedin -->
         {% if site.linkedin_username %}
 	<div class="card-container" onclick="myhref('https://linkedin.com/in/{{ site.linkedin_username }}');">
@@ -123,21 +139,9 @@ permalink: /
 	</div>
         {% endif %}
 
-	<!-- github -->
-        {% if site.github_username %}
-	<div class="card-container" onclick="myhref('https://github.com/{{ site.github_username }}');">
-	  <div class="card">
-	    <div class="front" style="background:#000000;">
-	      <span class="fa fa-github"
-		      style="font-size: 200%"></span>
-	    </div>
-	    <div class="back" style="background:#000000;">
-	      fork me</div>
-	  </div>
-	</div>
-        {% endif %}
 	
 	<!-- Blog -->
+	<!-- 
         {% if site.blog_url %}
 	<div class="card-container" onclick="https://github.com/{{ site.blog_url }}">
 	  <div class="card">
@@ -150,6 +154,7 @@ permalink: /
 	  </div>
 	</div>
         {% endif %}
+	-->
 	
 	<!-- Facebook -->
         {% if site.facebook_username %}

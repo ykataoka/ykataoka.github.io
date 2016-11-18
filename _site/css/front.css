@@ -45,7 +45,7 @@ h3 {
 }
 
 .content {
-    min-height:100%;
+    max-height:calc(100%-60px);
     padding-top: 80px;
     text-align: center;
 }
