@@ -86,13 +86,58 @@
             </div>
             <div class="col-md-6">
 	      <h6>Solution</h6>
-	      hogehoge
+	      <b>1. Comparison between high and low performance</b>
+
+              <br>
+              
+              Applying clustering technique to gps information, I have
+              divided the race track into 150 pieces.  Then, I
+              visualized the average and variance of the 4
+              inputs(gear, brake, throttle, ev-mode) using
+              high-performance dataset (top 30% mpg data) and
+              low-performance dataset (Bottom 30% mpg data). This
+              visualization helps driver to undersntand the strategy
+              of how they use 4 inputs to get higher mpg. 
+
+              <br>
+              
+	      <b>2. Understanding remarkable point</b>
+
+              <br>
+                            
+              Using 600 features (4inputs x 150 locations) and mpg
+              data as the label, supervised learning is applied. Then,
+              the feature importance is applied to identify the
+              important inputs which highly affect mpg. In other
+              words, they are the remakable points that drivers specially consider.
+              
             </div>
           </div>
 	  
           <div class="row">
             <div class="col-md-6">
               <h6>Result</h6>
+
+              It was an honor to recieve <b>the prize of "Best MPG by
+                Machine Learning"</b> out of 20 teams! Our data-driven
+              strategy was truly acknowledged by Toyota Research
+              Institute.
+
+              As for competition result, we achieved 83mpg on average
+              for 9 laps(42:29).  Including unfortunate penalties, the
+              score came down to 79mpg based on the regulation. In the
+              end, we ended up 4th position among 20 teams.  However,
+              yeah, we did great job! We were so close to Toyota dream
+              team(86mpg) who are the most knowledable people about
+              Prius.
+              
+              <br>
+
+              Our team got ABC7 news' attention. My name was on TV!
+              Here is
+              <a href="http://abc7news.com/…/prius-challenge-brings-slow-…/1783877/">
+                the source.
+              </a>
             </div>
             <div class="col-md-6">
 	      <img src="works/PriusChallenge/result.png" style="width:100%;">
@@ -103,7 +148,6 @@
       
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
