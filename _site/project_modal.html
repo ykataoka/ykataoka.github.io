@@ -94,7 +94,7 @@
 	      <b>2. Understanding remarkable point</b>
 
               <br>
-                            
+              
               Using 600 features (4inputs x 150 locations) and mpg
               data as the label, supervised learning is applied. Then,
               the feature importance is applied to identify the
@@ -142,6 +142,153 @@
     </div>
   </div>
 </div>
+
+
+
+<!-- IndyCar -->
+<div class="modal fade" id="IndyCarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+	  <a href="http://priuschallenge.toyotaonramp.com/" target="_blank">
+            Mining Muscle Use Data for Fatigue Reduction in IndyCar
+	  </a>
+	</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="container col-md-12">
+
+          <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+	      <h6>Overview</h6>
+
+              This research discusses how data analytics on muscle use
+              in extreme racing conditions can be conducted to find
+              actionable insights for the driver One of the important
+              insights is how to minimize driver’s muscle fatigue
+              during a race, because IndyCar has regulations
+              forbidding the use of power steering. This research
+              tackles two technological challenges: 1. data validation
+              on noisy signal obtained from wearable device in extreme
+              condition, 2. data cultivation to find actionable
+              insights for the driver from heterogeneous racing
+              data. First, we propose a data quality assessment
+              technique, enabling the judgment of whether data is
+              reliable or not. This qualitative analysis revealed that
+              the data validation method works 99.5% accuracy to
+              classify data as reliable or not. Second, we propose a
+              data visualization tool based on unsupervised learning
+              that enables the driver or mechanics to discover useful
+              feedback. We identified and demonstrated several
+              actionable insights, e.g., identifying potential
+              relaxation points.
+	      
+            </div>
+            <div class="col-md-2">
+            </div>
+          </div>
+	  
+          <div class="row">
+            <div class="col-md-6">
+	      <h6>Problems</h6>
+	      <b>Q1. How do we identify best strategy to maximize mpg?</b>
+	      Given the dataset, it is required to identify how use inputs (throttle, brake, gear and EV-mode)
+
+	      <br>
+	      
+	      <b>Q2. How does data scientist deliver the strategy to drivers?</b>
+	      This is not only data analytics but also teamwork. Delivering the result to driver is key part.
+
+	      <br>
+	      
+	      (Sonoma Raceway has tough uphill and downhill; 47[m] height. This makes this challenge hard.)
+	      
+            </div>
+            <div class="col-md-6">
+	      <img src="works/PriusChallenge/problem.png" style="width:100%;">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+	      <img src="works/PriusChallenge/solution.png" style="width:100%;">
+            </div>
+            <div class="col-md-6">
+	      <h6>Solution</h6>
+	      <b>1. Comparison between high and low performance</b>
+
+              <br>
+              
+              Applying clustering technique to gps information, I have
+              divided the race track into 150 pieces.  Then, I
+              visualized the average and variance of the 4
+              inputs(gear, brake, throttle, ev-mode) using
+              high-performance dataset (top 30% mpg data) and
+              low-performance dataset (Bottom 30% mpg data). This
+              visualization helps driver to undersntand the strategy
+              of how they use 4 inputs to get higher mpg. 
+
+              <br>
+              
+	      <b>2. Understanding remarkable point</b>
+
+              <br>
+              
+              Using 600 features (4inputs x 150 locations) and mpg
+              data as the label, supervised learning is applied. Then,
+              the feature importance is applied to identify the
+              important inputs which highly affect mpg. In other
+              words, they are the remakable points that drivers specially consider.
+              
+            </div>
+          </div>
+	  
+          <div class="row">
+            <div class="col-md-6">
+              <h6>Result</h6>
+
+              It was an honor to recieve <b>the prize of "Best MPG by
+                Machine Learning"</b> out of 20 teams! Our data-driven
+              strategy was truly acknowledged by Toyota Research
+              Institute.
+
+              As for competition result, we achieved 83mpg on average
+              for 9 laps(42:29).  Including unfortunate penalties, the
+              score came down to 79mpg based on the regulation. In the
+              end, we ended up 4th position among 20 teams.  However,
+              yeah, we did great job! We were so close to Toyota dream
+              team(86mpg) who are the most knowledable people about
+              Prius.
+              
+              <br>
+
+              Our team got ABC7 news' attention. My name was on TV!
+              Here is
+              <a href="http://abc7news.com/…/prius-challenge-brings-slow-…/1783877/">
+                the source.
+              </a>
+            </div>
+            <div class="col-md-6">
+	      <img src="works/PriusChallenge/result.png" style="width:100%;">
+            </div>
+          </div>
+	</div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 
@@ -241,7 +388,7 @@
 
                 In
                 Japanese, <a href="http://www.asahi-net.or.jp/~ab6s-med/NORTH/SP/bassreff.htm">
-                this site </a> may help to design the enclosure(box).
+                  this site </a> may help to design the enclosure(box).
 
                 
                 <li>Go to home center and get materials</li>
@@ -253,7 +400,7 @@
                 Do not forget to get the acoustical material, which
                 should be attached to insider of the speaker. Plus,
                 you need to get wiring cable and terminal for it.
-                                
+                
                 <li>Assemble the materials and paint</li> You just
                 need to assemble them. I am not writing details here,
                 but just create whatever you want. If you make any
@@ -388,7 +535,7 @@
 	      <b>2. Understanding remarkable point</b>
 
               <br>
-                            
+              
               Using 600 features (4inputs x 150 locations) and mpg
               data as the label, supervised learning is applied. Then,
               the feature importance is applied to identify the
