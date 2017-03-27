@@ -111,23 +111,28 @@
               It was an honor to recieve <b>the prize of "Best MPG by
                 Machine Learning"</b> out of 20 teams! Our data-driven
               strategy was truly acknowledged by Toyota Research
-              Institute.
+              Institute. We were fortunate to get the picture with the
+              chairman of Toyota Motor Corp. and CEO of TRI.
 
+              <br>
               As for competition result, we achieved 83mpg on average
-              for 9 laps(42:29).  Including unfortunate penalties, the
-              score came down to 79mpg based on the regulation. In the
-              end, we ended up 4th position among 20 teams.  However,
-              yeah, we did great job! We were so close to Toyota dream
-              team(86mpg) who are the most knowledable people about
-              Prius.
+              for 9 laps(42:29). We did great job! We were so close to
+              Toyota dream team(86mpg) who are the most knowledable
+              people about Prius. Overall result was 4th position
+              among 20 teams because we had unfortunate penalties.
               
               <br>
-
+	      
               Our team got ABC7 news' attention. My name was on TV!
               Here is
               <a href="http://abc7news.com/…/prius-challenge-brings-slow-…/1783877/">
                 the source.
               </a>
+
+	      <br>
+	      I am looking forward to joining to next year's
+	      autonomous driving Prius Challenge'18.
+	      
             </div>
             <div class="col-md-6">
 	      <img src="works/PriusChallenge/result.png" style="width:100%;">
@@ -189,7 +194,14 @@
               feedback. We identified and demonstrated several
               actionable insights, e.g., identifying potential
               relaxation points.
+
+	      <br>
 	      
+	      <b>Term</b> : 2016.03 - 2016.10
+	      <br>
+	      <b>Software</b>  : python (sklearn, tensorflow, keras,
+	      pandas, numpy), html/js(bootstrap, Grafana, bokeh.js,
+	      Mapbox, node.js), InfluxDB
             </div>
             <div class="col-md-2">
             </div>
@@ -198,55 +210,63 @@
           <div class="row">
             <div class="col-md-6">
 	      <h6>Problems</h6>
-	      <b>Q1. How do we identify best strategy to maximize mpg?</b>
-	      Given the dataset, it is required to identify how use inputs (throttle, brake, gear and EV-mode)
 
-	      <br>
-	      
-	      <b>Q2. How does data scientist deliver the strategy to drivers?</b>
-	      This is not only data analytics but also teamwork. Delivering the result to driver is key part.
+	      The driver's challenge and data science's challenges are
+	      shown in the right figure.
 
-	      <br>
+	      <br><br>
 	      
-	      (Sonoma Raceway has tough uphill and downhill; 47[m] height. This makes this challenge hard.)
-	      
+	      Yeah, this may sound the straightforward problem
+	      statement though, it was not easy to setup this problem
+	      indeed.
+
+	      First, I had f2f conversation with Tony Kanaan to
+	      discuss his real challenges. (design thinking process)
+	      While most of them were hard to solve due to the lack of
+	      the dataset, some sounded feasible to me. Then, once I
+	      started data analytics and had discussion with various
+	      people, I realized the necessity of the data validation
+	      process.
+
+	      Like this project, innovation works are occasionally
+	      hard to define job contents at first. To me, the hard
+	      challenges of this projects are 1. clarifying the
+	      problem statement and 2. collecting the unique dataset.
             </div>
             <div class="col-md-6">
-	      <img src="works/PriusChallenge/problem.png" style="width:100%;">
+	      <img src="works/IndyCar/problem.png" style="width:100%; padding:70px 0;">
             </div>
           </div>
 
           <div class="row">
             <div class="col-md-6">
-	      <img src="works/PriusChallenge/solution.png" style="width:100%;">
+	      <img src="works/IndyCar/solution.png" style="width:100%;">
+	      <img src="works/IndyCar/result1.png" style="width:100%;">
             </div>
             <div class="col-md-6">
 	      <h6>Solution</h6>
-	      <b>1. Comparison between high and low performance</b>
 
-              <br>
-              
-              Applying clustering technique to gps information, I have
-              divided the race track into 150 pieces.  Then, I
-              visualized the average and variance of the 4
-              inputs(gear, brake, throttle, ev-mode) using
-              high-performance dataset (top 30% mpg data) and
-              low-performance dataset (Bottom 30% mpg data). This
-              visualization helps driver to undersntand the strategy
-              of how they use 4 inputs to get higher mpg. 
+              The idea of the data validation is that the actual
+              sensor data is considered as unreliable data if the
+              difference betweeen actual and predicted value are
+              big. The prediction model uses car-telemetry data as
+              features and predict the EMG value. This aims for
+              prediction model to avoid the bad effect of noisy EMG
+              values.
 
-              <br>
-              
-	      <b>2. Understanding remarkable point</b>
+	      <br>
+	      
+	      Data cultivation uses the unsupervised learning for
+	      driver or mechanics to understand tremendous data in
+	      more intuitive way.
 
-              <br>
-              
-              Using 600 features (4inputs x 150 locations) and mpg
-              data as the label, supervised learning is applied. Then,
-              the feature importance is applied to identify the
-              important inputs which highly affect mpg. In other
-              words, they are the remakable points that drivers specially consider.
-              
+	      <br>
+
+	      In additino to data analytics, I also created data
+	      visualization WebUI for them. Data validation is shown
+	      in real-time dashboard and data cultivation is shown in
+	      post analytics dashboard. 
+	      
             </div>
           </div>
 	  
@@ -254,29 +274,28 @@
             <div class="col-md-6">
               <h6>Result</h6>
 
-              It was an honor to recieve <b>the prize of "Best MPG by
-                Machine Learning"</b> out of 20 teams! Our data-driven
-              strategy was truly acknowledged by Toyota Research
-              Institute.
-
-              As for competition result, we achieved 83mpg on average
-              for 9 laps(42:29).  Including unfortunate penalties, the
-              score came down to 79mpg based on the regulation. In the
-              end, we ended up 4th position among 20 teams.  However,
-              yeah, we did great job! We were so close to Toyota dream
-              team(86mpg) who are the most knowledable people about
-              Prius.
-              
+	      The data validation model has 99.48% accuracy to
+	      classify whether the EMG sensor data is reliable or
+	      unreliable. Yeah, it has good performance. (Please see
+	      the details on my paper.)
+	      
               <br>
 
-              Our team got ABC7 news' attention. My name was on TV!
-              Here is
-              <a href="http://abc7news.com/…/prius-challenge-brings-slow-…/1783877/">
-                the source.
-              </a>
+	      The data cultivation identified the locations where
+	      driver tends to have unstable muscle use and where
+	      driver can take rest more. This may be feedback for the
+	      driver to avoid muscle cramp.
+	      
+              <br>
+
+	      I presented this research in MIT Sloan Sports Analytics
+	      Conference and NTT R&D Forum '17. The best part is I got
+	      autograph of Tony Kanaan. :D
+	      
             </div>
             <div class="col-md-6">
-	      <img src="works/PriusChallenge/result.png" style="width:100%;">
+	      <img src="works/IndyCar/result4.png" style="width:100%;">
+	      <img src="works/IndyCar/achievement.png" style="width:100%;">
             </div>
           </div>
 	</div>
@@ -459,32 +478,40 @@
             <div class="col-md-2">
             </div>
             <div class="col-md-8">
-	      <h6>Overview</h6> I love basketball. I have played
-              basketball since I was 6 years old.
-              
-              I joined to MIT Sloan Sports Analytics Hackathon hosted
-              by ESPN in Mar.2017.  The theme of the hackathon was
-              "Measure the unmeasureable in basketball" such as
-              teamwork, mentality, leadership and heart. Yeah, sounds
-              very tough. This is specifically hard task as a data
-              science task, because there are no ground truth of these
-              factors...
+	      <h6>Overview</h6> I have played basketball since I was 6
+              years old. As I love it, I joined to
+	      <a href="http://www.sloansportsconference.com/activities/hackathon/">
+		MIT Sloan Sports
+		Analytics Hackathon
+	      </a> hosted by ESPN in Mar.2017. The theme of the
+              hackathon was "Measure the unmeasureable in basketball"
+              such as teamwork, mentality, leadership and heart. Yeah,
+              sounds very tough. This is specifically hard task as a
+              data science task, because there are no ground truth of
+              these factors...
 
+	      <br>
+	      
               For this hackathon, I decided to focus on 'loose ball
-              detection'. In basketball, loose ball is the moment you
-              can see player's fighting spirits. Not only that,
-              chasing loose ball has chance to 1. excite audience,
-              2. inspire teammates and 3. change momentum of the game.
+              detection'. In basketball, loose ball is the moment
+              audience can fell player's fighting spirits. Not only
+              that, chasing loose ball has chance to 1. excite
+              audience, 2. inspire teammates and 3. change momentum of
+              the game.
+	      <br>
               
               Conventionally in the given dataset by ESPN (as far as I
               thoroughly surveyed), the loose ball has not been
               recorded unless it is related to foul. Thus, finding
               loose ball automatically would be helpful to understand
               player's latent power of mentality.
+	      <br>
 
-              (Since this is one hackathon, I only spent 24~48 hours
-              for this project in total.)
-              
+
+	      <b>Term</b> : 1~2days 
+	      <br>
+	      <b>Software</b>  : python(pandas, numpy), html/js(bokeh.js)
+
             </div>
             <div class="col-md-2">
             </div>
@@ -493,55 +520,44 @@
           <div class="row">
             <div class="col-md-6">
 	      <h6>Problems</h6>
-	      <b>Q1. How do we identify best strategy to maximize mpg?</b>
-	      Given the dataset, it is required to identify how use inputs (throttle, brake, gear and EV-mode)
+	      <b>Q. How is it possible to detect loose ball?</b>
+	      Chasing loose ball could be one of the important actions
+	      to tell player's fighting spirits. However, the loose
+	      ball is not recorded in stats. Moreover, there may not
+	      be well-defined definition of loose ball in literature.
 
 	      <br>
 	      
-	      <b>Q2. How does data scientist deliver the strategy to drivers?</b>
-	      This is not only data analytics but also teamwork. Delivering the result to driver is key part.
-
-	      <br>
+	      The given dataset includes the both ball and players
+	      trajectory. Thus, the challenge is how to define the
+	      loose ball in mathematical formulation.
 	      
-	      (Sonoma Raceway has tough uphill and downhill; 47[m] height. This makes this challenge hard.)
-	      
-            </div>
+	    </div>
             <div class="col-md-6">
-	      <img src="works/PriusChallenge/problem.png" style="width:100%;">
+	      <img src="works/LooseBallDetection/problem.png" style="width:100%; padding:15px 0;">
             </div>
           </div>
 
           <div class="row">
             <div class="col-md-6">
-	      <img src="works/PriusChallenge/solution.png" style="width:100%;">
+	      <img src="works/LooseBallDetection/solution.png" style="width:100%; padding:30px 0;">
             </div>
             <div class="col-md-6">
 	      <h6>Solution</h6>
-	      <b>1. Comparison between high and low performance</b>
 
-              <br>
-              
-              Applying clustering technique to gps information, I have
-              divided the race track into 150 pieces.  Then, I
-              visualized the average and variance of the 4
-              inputs(gear, brake, throttle, ev-mode) using
-              high-performance dataset (top 30% mpg data) and
-              low-performance dataset (Bottom 30% mpg data). This
-              visualization helps driver to undersntand the strategy
-              of how they use 4 inputs to get higher mpg. 
+	      The left figure desribes my approach to detect loose
+	      ball.  Based on observational definittion, the
+	      mathematical formulation was set up. If the trajectory
+	      data satisfies all of the conditions at certain moment,
+	      then the moment can be the time somebody is chasing
+	      loose ball.
 
-              <br>
-              
-	      <b>2. Understanding remarkable point</b>
+	      <br>
 
-              <br>
-              
-              Using 600 features (4inputs x 150 locations) and mpg
-              data as the label, supervised learning is applied. Then,
-              the feature importance is applied to identify the
-              important inputs which highly affect mpg. In other
-              words, they are the remakable points that drivers specially consider.
-              
+	      Now, this is a merely heuristic approach. Once the
+	      labeled data of loose ball is available, I should apply
+	      the supervised learning appoach. Maybe, this is typical
+	      type of deep learning task!
             </div>
           </div>
 	  
@@ -549,29 +565,25 @@
             <div class="col-md-6">
               <h6>Result</h6>
 
-              It was an honor to recieve <b>the prize of "Best MPG by
-                Machine Learning"</b> out of 20 teams! Our data-driven
-              strategy was truly acknowledged by Toyota Research
-              Institute.
-
-              As for competition result, we achieved 83mpg on average
-              for 9 laps(42:29).  Including unfortunate penalties, the
-              score came down to 79mpg based on the regulation. In the
-              end, we ended up 4th position among 20 teams.  However,
-              yeah, we did great job! We were so close to Toyota dream
-              team(86mpg) who are the most knowledable people about
-              Prius.
-              
+	      Based on the above rule-based approach, the right movie
+	      shows one of the example of the loose ball. Here, you can see
+	      two of each team members chase the ball.
+	      
               <br>
 
-              Our team got ABC7 news' attention. My name was on TV!
-              Here is
-              <a href="http://abc7news.com/…/prius-challenge-brings-slow-…/1783877/">
-                the source.
-              </a>
+	      There are 180+ applicants to this hackathon, and I was
+	      chosen for the 40 participants! Unfortunately, I could
+	      not make it to finalist this time. (First time to miss
+	      the award in hackathon!) It looked like the host, ESPN,
+	      wanted to know more creative idea, not cool software
+	      implementation. I learned that competing sports industry
+	      is very hard unless you have really deep knowledge about
+	      that sports. Even though my hobby is basketball, my
+	      creativity about basketball may not be enough to satisfy
+	      ESPN.
             </div>
             <div class="col-md-6">
-	      <img src="works/PriusChallenge/result.png" style="width:100%;">
+	      <img src="works/LooseBallDetection/demo.png" style="width:100%; padding:45px">
             </div>
           </div>
 	</div>
