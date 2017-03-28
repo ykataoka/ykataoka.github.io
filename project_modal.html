@@ -311,6 +311,217 @@
 
 
 
+<!-- Trirotor -->
+<div class="modal fade" id="Trirotor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+	  Failsafe for Drone System : Nonlinear System Analytics and
+	  Contorl for Trirotor Drone system
+	</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="container col-md-12">
+
+          <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+	      <h6>Overview</h6>
+
+              What if a drone loses one control input by accident
+	      while flying? Since a ordinal drone system has 4 inputs,
+	      this research tackles the control problem of 3 inputs
+	      drone model, trirotor.
+              
+              <br>
+              <b>
+              First, this research revealed the minimal number of
+              inputs for hovering control from the perspective of
+              nonlinear control system theory. </b>
+              The model analysis
+              reveals that hovering control is impossible for any
+              three-inputs drone system through the argument of
+              Locally Asymptotically Stabilizability(LAS).
+
+              <br>
+              <b>
+              Second, this research proposed a nonlinear controller
+              for an underactuated UAV having three inputs to realize
+              “circle motion”, the motion that the attitude of UAV
+              points to the center of circle while the center of mass
+              moves on a circle orbit.
+              </b>
+              The proposed method is redesigning the time-varying
+              output zeroing controller discretely. This method allows
+              output functions to be kept zero even though output
+              functions are changed.
+
+              <!-- IFAC'11 -->
+              <!-- 
+              This paper reveals the minimal number of inputs for
+              hovering control from the perspective of nonlinear
+              control system theory. Then, a nonlinear controller is
+              designed to obtain meaningful motion for an
+              underactuated UAV with the consideration of the
+              limitation acknowledged through the model
+              analysis. Throughout this paper, a particular UAV model
+              having three rotors is considered as a controlled
+              object. First, nonlinear state equations are computed
+              with valid assumptions. Next, the model analysis reveals
+              that hovering control is impossible for not only the
+              proposed model but also a generic three-inputs model
+              through the argument of Locally Asymptotically
+              Stabilizability(LAS). Finally, numerical simulation
+              confirms that position control is realizable via Output
+              Zeroing Control along with preferable attitude.
+                -->
+              
+
+              <!-- CDC -->
+              <!--
+              In this paper, a nonlinear controller is designed for an
+              underactuated UAV having three inputs to realize
+              “circle motion”, the motion that the attitude of UAV
+              points to the center of circle while the center of mass
+              moves on a circle orbit. The proposed method is
+              redesigning the time-varying output zeroing controller
+              discretely. This method allows output functions to be
+              kept zero even though output functions are changed. In
+              other words, zero dynamics can be controlled by this
+              method. Finally, numerical simulation shows the validity
+              of the proposed nonlinear controller.  Trirotor is
+              awesome.
+              -->
+
+              
+            </div>
+            <div class="col-md-2">
+            </div>
+          </div>
+	  
+          <div class="row">
+            <div class="col-md-6">
+	      <h6>Problems</h6>
+	      <b>Q1. What is the limitation in controlling both
+	        position and attitude in 3D (SE(3)) ?</b>
+
+              <br>
+              There are 6 states (12 states including velocity) that
+	      needs to be controlled for hovering. How many inputs are
+	      the minimum number of the control inputs for hovering
+	      control? Can this be revealed by mathematical proof?
+              
+	      <br><br>
+	      
+	      <b>Q2. What control can be done with only 3 inputs?</b>
+              
+              Even with the 3 inputs, there must be meaningful motion
+              that the nonlinear control can achieve such as circle
+              motion mentioned above. How do we design the nonlinear
+              controller to realize this motion with only 3 inputs.
+              
+            </div>
+            <div class="col-md-6" align="center">
+	      <img src="works/Trirotor/Trirotor1.png" style="width:80%;">
+	      <img src="works/Trirotor/Trirotor2.png" style="width:100%;">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+	      <img src="works/Trirotor/solution.png" style="width:100%; padding:40px 0px">
+	      <img src="works/Trirotor/strategy_movement.png" style="width:100%;">
+            </div>
+            <div class="col-md-6">
+	      <h6>Solution</h6>
+	      <b>1. Nonlinear System Analytics for input number revealation</b>
+              <br>
+              Previously, M.Ishikawa and M.Sampei revealed a necessary
+              condition for LAS that is “A system is not feedback
+              stabilizable if the number of inputs is less than the
+              dimension of the equilibria submanifold.” In order to
+              apply this theorem to the generic model of drone system,
+              I identified the dimension of the equlibria submanifold
+              of it by using the general mathematical formulation of
+              drone system.
+              
+              <br>
+              
+	      <b>2. Nonlinear Control Strategy for circle motion</b>
+              <br>
+
+              The left figure shows the strategy for the circle motion
+              control.  First, the system focuses on controlling the
+              (x,y,z) position control by Output Zeroing
+              Control. Second, once it is completed, the remaining
+              dynamics (Zero Dynamics) mainly causes instability to
+              yaw angle. The idea to control yaw angle is changing the
+              time-variant output function with maintaining the
+              (x,y,z) position. In other words, this method enables to
+              control Zero Dynamics.
+              
+            </div>
+          </div>
+	  
+          <div class="row">
+            <div class="col-md-6">
+              <h6>Result</h6>
+	      <b>1. The following control limitation is proved.</b>              
+              <br>
+              <i>
+                Theorem : "Assume that UAV is composed of only a rigid
+                body and propellers, then it is impossible to locally
+                asymptotically stabilize a generic UAV model having
+                less than three rotors inputs via continuous state
+                feedback."
+              </i>
+              The details can be found on
+              <a href="download/IFAC2011_NonlinearControlandModelAnalysisofTrirotorUAVModel_YasuyukiKataoka.pdf" download>
+              my paper.
+              </a>
+
+              <br>
+	      <b>2. Circle Motion Control with only three inputs.</b>
+              <br>
+              The result of the numerical simulation is shown on right
+              movie. As you can see, first the (x,y,z) position
+              control is realized. Second, changing the yaw-angle with
+              maintaining the (x,y,z) position is realized.  The
+              details can be found on
+              <a href="download/CDC2013_CircleMotionControlofTrirotorUAVviaDiscreteOutputZeroing_YasuyukiKataoka.pdf" download>
+              my paper.
+              </a>
+              
+              
+            </div>
+            <div class="col-md-6">
+              <!-- This is going to be movie -->
+              <!--
+	      <img src="works/PriusChallenge/result.png" style="width:100%;">
+              -->
+            </div>
+          </div>
+	</div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 <!-- DIY : Homemade Speaker -->
 <div class="modal fade" id="HomemadeSpeaker" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
@@ -597,4 +808,164 @@
 </div>
 
 
+<!-- Battery Prediction -->
+<div class="modal fade" id="BatteryPrediction" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+	  Smart Fleet Management System using IoT-driven Battery Prediction 
+	</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="container col-md-12">
 
+          <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+	      <h6>Overview</h6>
+
+              I participated in Mercedes Benz Hackathon at Silicon
+              Valley '16 as a data scientist. The challenge was to
+              create the innovative fleet management system within 24
+              hours. I worked with people whom I met for the first
+              time on site and successfully delivered the smart fleet
+              management PoC. We decided to implement the future
+              vision of fleet management based on the core battery
+              prediction functionality. This prediction would be
+              accurately conducted by machine leanring using IoT data
+              and CAN data. Using this prediction, we proposed the new
+              smart fleet system with 1. smart route planning,
+              2. real-time navigation feedback.
+              
+              <br>
+              The result of the hackathon was 2nd prize among 120+
+              applicants. The juries judged the quality of both idea
+              and implementation.
+              
+	      <br>
+	      
+	      <b>Term</b> : 2016.11 (24 hours)
+	      <br>
+	      <b>Software</b> : python (sklearn, pandas, numpy),
+	      html/js(angular JS, Grafana, Mapbox), InfluxDB
+              
+            </div>
+            <div class="col-md-2">
+            </div>
+          </div>
+	  
+          <div class="row">
+            <div class="col-md-12">
+	      <h6>Problems</h6>
+
+	      <b>Q. How to improve EV's battery prediction accuracy?</b>
+              
+              <br>
+              In general, stopping by charging stations is a loss in
+              fleet management businesses. However, when planning the
+              route, it looks like hard to predict battery
+              consumption. (Based on my experience using Nissan Leaf
+              for more than one year, the battery prediction
+              functionality does not count the characteristics of road
+              and can not accurately predict battery consumption.) I
+              think this is because many factors affect EV's battery
+              performance such as the weight of the cargo, weather,
+              temperature, route (gradient of terrain, traffic), time
+              and how you drive.  What if all of these factors are
+              available through IoT sensors? The prediction
+              performance should be dramatically improved!
+
+              <br>
+              
+	      <b>Q. If the system can predict EV's battery consumption
+	        more accurately, what does the future fleet management
+	        for delivering system look like?</b>
+
+              There are many use cases using battery prediction
+	      though, we decided to focus on two functions : 1. smart
+	      route planning, 2. real-time navigation feedback.
+              
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+	      <img src="works/BatteryPrediction/result.png" style="width:100%; padding:20px 0px">
+            </div>
+            <div class="col-md-6">
+	      <h6>Solution</h6>
+	      <b>1. Smart Route Planning</b>
+              <br>
+              Every car has different battery capacity and remaining
+              battery. Each of drivers has different driving behavior.
+              Depending on the combination of the driver and the car,
+              the best routing path may differ. Some routes require
+              the driver to drop by charging station. Some routes
+              should be the most energy efficient route to avoid
+              dropping by charging station. Some routes should be the
+              fastest route due to Amazon Prime. Using battery
+              prediction, the combination of car, driver and route
+              can be optimally matched.
+              
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+	      <b>2. Real-time Navigation Feedback</b>
+              <br>
+              The fleet manager should want to have the real-time
+              monitoring tool to see each driver's performance.  This
+              tool visualizes the battery prediction and current
+              value. While some driver follows original planning of
+              the battery use, the other drivers may not be able to
+              follow it. In this case, fleet manager can tell driver
+              to change driver behavior or go to the charging station
+              during lunch time.
+            </div>
+          </div>
+          
+          
+          <div class="row">
+            <div class="col-md-6">
+              <h6>Result</h6>
+
+              Our team, FleetWise, won the 2nd prize in this
+              hackathon. It was very nice to meet new people, discuss
+              the challenges in this industry and think about
+              something new in the IoT and Automotice Era.
+
+              <br>
+              In future, once tremendous data of CAN data and IoT data
+              are collected, we can create the knowledge base of the
+              fuel consumption map. Like the traffic information is
+              attributed to edges of road network, I think the battery
+              consumption level can be added to the edges too. Using
+              this knowledge base, my leaf can be wiser too. :D
+              
+              <br>
+              Photo : I was fortunate to take a photo with Arwed
+              Niestroj, the CEO of Mercedes-Benz Research &
+              Development North America.
+              
+            </div>
+            <div class="col-md-6">
+              <!-- This is going to be movie -->
+	      <img src="works/BatteryPrediction/award.jpg" style="width:100%;">
+            </div>
+          </div>
+	</div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
