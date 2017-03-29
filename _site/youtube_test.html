@@ -1,0 +1,73 @@
+<script src="js/jquery-1.11.3.min.js"></script>
+
+
+<script>
+  $(function(){
+  var movies = [];
+  var movies_w = [];
+  var movies_h = [];
+  var images = [];
+
+  $('.youtube iframe').each(function(index, element) {
+  // obtain attribute
+  var movie_src = $(this).attr('src');
+  var movie_width = $(this).attr('width');
+  var movie_height = $(this).attr('height');
+
+  // insert to array
+  movies[index] = movie_src
+  movies_w[index] = movie_width
+  movies_h[index] = movie_height
+  
+  // get thumbnail (320x180 in this case)
+  images[index] = 'http://i.ytimg.com/vi' + movie_src.substring(movie_src.lastIndexOf("/"),movie_src.lastIndexOf("?")) + '/mqdefault.jpg'
+  
+  // replace
+  $(this).after('<div class="youtube_play"><img src="' + images[index] + '" width="' + movies_w[index] + '"><div class="youtube_btn"></div></div>').remove();
+  });
+
+  $('.youtube_play').each(function(index, element) {
+  $(this).click(function(){
+
+  // replace with click
+  $(this).after('<iframe src="' + movies[index] + '&amp;autoplay=1" width="' + movies_w[index] + '" height="' + movies_h[index] + '" frameborder="0"></iframe>').remove();
+  });
+  $(this).hover(function(){
+  // roll over
+  $(".youtube_btn").eq([index]).css("background-image","url('imgs/YouTube-icon-full_color.png')");
+  },function(){
+  $(".youtube_btn").eq([index]).css("background-image","");
+  });
+  });
+  });
+</script>
+
+
+<style>
+  .youtube {position:relative;} /* Wrapper */
+  .youtube_play:hover {cursor:pointer;}/* thumbnail */
+
+  /* YouTube Icon */
+  .youtube_btn {
+
+  /* icon png and size */
+  width:42px;
+  height:30px;
+  background-image:url("imgs/YouTube-icon-dark.png");
+
+  /* allocate in center */
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  }
+</style>
+
+<!-- YouTubeの埋め込みコードをdivで囲む(複数貼り付ける時も動画1つずつ囲む) -->
+<div class="youtube">
+  <iframe width="320" height="180" src="https://www.youtube.com/embed/b4B54RElhdA?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+

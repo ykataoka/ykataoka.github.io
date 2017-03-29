@@ -28,6 +28,8 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- hover on smartphone -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    
     <script>
     $( 'a' )
     .bind( 'touchstart', function(){
@@ -38,12 +40,8 @@
     </script>
 
     <!-- read external html of modal info -->
-    <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/include.js"></script>
-    <script>
-    include("project_modal.html");
-    </script>
     
     <style>
     a.hover {
@@ -53,6 +51,1230 @@
   </head>
 
   <body style="font-family: 'Alegreya Sans', sans-serif;">
+
+
+
+
+
+
+    <style>
+     .youtube-player {
+       position: relative;
+       padding-bottom: 56.23%;
+       /* Use 75% for 4:3 videos */
+       height: 0;
+       overflow: hidden;
+       max-width: 100%;
+       background: #000;
+       margin: 5px;
+     }
+     
+     .youtube-player iframe {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       z-index: 100;
+       background: transparent;
+     }
+     
+     .youtube-player img {
+       bottom: 0;
+       display: block;
+       left: 0;
+       margin: auto;
+       max-width: 100%;
+       width: 100%;
+       position: absolute;
+       right: 0;
+       top: 0;
+       border: none;
+       height: auto;
+       cursor: pointer;
+       -webkit-transition: .4s all;
+       -moz-transition: .4s all;
+       transition: .4s all;
+     }
+     
+     .youtube-player img:hover {
+       -webkit-filter: brightness(75%);
+     }
+     
+     .youtube-player .play {
+       height: 72px;
+       width: 72px;
+       left: 50%;
+       top: 50%;
+       margin-left: -36px;
+       margin-top: -36px;
+       position: absolute;
+       background: url("//i.imgur.com/TxzC70f.png") no-repeat;
+       cursor: pointer;
+     }
+
+    </style>
+
+    <script>
+
+     /* Light YouTube Embeds by @labnol */
+     /* Web: http://labnol.org/?p=27941 */
+
+     document.addEventListener("DOMContentLoaded",
+                               function() {
+                                 var div, n,
+                                     v = document.getElementsByClassName("youtube-player");
+                                 for (n = 0; n < v.length; n++) {
+                                   div = document.createElement("div");
+                                   div.setAttribute("data-id", v[n].dataset.id);
+                                   div.innerHTML = labnolThumb(v[n].dataset.id);
+                                   div.onclick = labnolIframe;
+                                   v[n].appendChild(div);
+                                 }
+                               });
+
+     function labnolThumb(id) {
+       var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">',
+           play = '<div class="play"></div>';
+       return thumb.replace("ID", id) + play;
+     }
+
+     function labnolIframe() {
+       var iframe = document.createElement("iframe");
+       var embed = "https://www.youtube.com/embed/ID?autoplay=1";
+       iframe.setAttribute("src", embed.replace("ID", this.dataset.id));
+       iframe.setAttribute("frameborder", "0");
+       iframe.setAttribute("allowfullscreen", "1");
+       this.parentNode.replaceChild(iframe, this);
+     }
+
+    </script>
+
+    <!-- 
+         <script>
+         include("project_modal.html");
+         </script>
+       -->
+
+
+    <!-- MODAL DEFINITION Start -->
+    
+    <!-- Behavior Cloning -->
+    <div class="modal fade" id="BehaviorCloning" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+	      <a href="https://github.com/udacity/CarND-Behavioral-Cloning-P3" target="_blank">
+	        Behavior Cloning for Self-Driving Car
+	      </a>
+	    </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container col-md-12">
+
+              <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+	          <h6>Overview</h6>
+                  
+                  How can we control a car by only camera? The idea of
+                  behavior cloning is to replicate the driving performance
+                  of human by using machine learning whose model uses the
+                  camera data as feature(input) and the steering angle as
+                  label(output). Let's see how deep learning performs for
+                  this computer vision task.
+                  
+                  <br>
+                  The deep learning model I used is almost same as
+                  NVIDIA's self-driving car, 5 convolutional layers and 4
+                  full connected layers. Plus, I did data augmentation and
+                  hyper parameter tuning, which is the hardest part of
+                  deep learning work, I believe.
+                  
+                  <br>
+                  This project was part of the Udacity's Self-driving
+                  Engineer course. While it was super fun to let my model
+                  run on simultaion, there are tons of things to achieve
+                  better performance of deep learning model.
+                  
+                </div>
+                <div class="col-md-2">
+                </div>
+              </div>
+	      
+              <div class="row">
+                <div class="col-md-6">
+	          <h6>Problems</h6>
+	          <b>How to train the machine learning model that
+	            successfully run on the simulator?</b>
+                  <br>
+                  Using the camera (assuming the dash cam), 
+                  
+                </div>
+                <div class="col-md-6">
+	          <img src="works/BehaviorCloning/problem.png" style="width:100%;">
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+	          <img src="works/BehaviorCloning/solution1.png" style="width:100%;">
+                </div>
+                <div class="col-md-6">
+	          <h6>Solution</h6>
+                  
+                </div>
+              </div>
+	      
+              <div class="row">
+                <div class="col-md-6">
+                  <h6>Result</h6>
+	          It successffuly runs of the course.
+
+                  <br>
+
+                  There is one more challenging different track where it has uphill and downhills
+                  
+                </div>
+                <div class="col-md-6">
+                  <div class="youtube-player" data-id="Veu0Lzvmwmc"></div>
+                </div>
+              </div>
+	    </div>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Prius Challenge -->
+    <div class="modal fade" id="PriusChallengeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+	      <a href="http://priuschallenge.toyotaonramp.com/" target="_blank">
+	        Prius Challenge
+	      </a>
+	    </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container col-md-12">
+
+              <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+	          <h6>Overview</h6>
+	          Prius Challenge was the racing competition about
+	          maximizing mpg for Prius by data-driven strategy.  This
+	          involves both data science(theory) and real driving
+	          skills(practice).
+
+	          I applied both two different machine learning approaches
+	          to identify the best strategy to achieve higher mpg. The
+	          analysis revealed, for example, where to use
+	          'neutral'/'drive' or 'EVmode(on/off)'.
+
+	          As a result, our team got the award of 'Best MPG by
+	          Machine Learning'! Plus, we achieved 83mpg(w/o
+	          penalties), while Toyota dream team did 86mpg. Yeah, we
+	          were so close and I can say data-driven approach worked!
+	          
+	          This competition was held at Sonoma Raceway by Toyota
+	          Research Institute in Mar 3rd, 2017. Our team was
+	          composed of me(data scientist) and 4 other members of
+	          great drivers!
+	          
+                </div>
+                <div class="col-md-2">
+                </div>
+              </div>
+	      
+              <div class="row">
+                <div class="col-md-6">
+	          <h6>Problems</h6>
+	          <b>Q1. How do we identify best strategy to maximize mpg?</b>
+	          Given the dataset, it is required to identify how use inputs (throttle, brake, gear and EV-mode)
+
+	          <br>
+	          
+	          <b>Q2. How does data scientist deliver the strategy to drivers?</b>
+	          This is not only data analytics but also teamwork. Delivering the result to driver is key part.
+
+	          <br>
+	          
+	          (Sonoma Raceway has tough uphill and downhill; 47[m] height. This makes this challenge hard.)
+	          
+                </div>
+                <div class="col-md-6">
+	          <img src="works/PriusChallenge/problem.png" style="width:100%;">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+	          <img src="works/PriusChallenge/solution.png" style="width:100%;">
+                </div>
+                <div class="col-md-6">
+	          <h6>Solution</h6>
+	          <b>1. Comparison between high and low performance</b>
+
+                  <br>
+                  
+                  Applying clustering technique to gps information, I have
+                  divided the race track into 150 pieces.  Then, I
+                  visualized the average and variance of the 4
+                  inputs(gear, brake, throttle, ev-mode) using
+                  high-performance dataset (top 30% mpg data) and
+                  low-performance dataset (Bottom 30% mpg data). This
+                  visualization helps driver to undersntand the strategy
+                  of how they use 4 inputs to get higher mpg. 
+
+                  <br>
+                  
+	          <b>2. Understanding remarkable point</b>
+
+                  <br>
+                  
+                  Using 600 features (4inputs x 150 locations) and mpg
+                  data as the label, supervised learning is applied. Then,
+                  the feature importance is applied to identify the
+                  important inputs which highly affect mpg. In other
+                  words, they are the remakable points that drivers specially consider.
+                  
+                </div>
+              </div>
+	      
+              <div class="row">
+                <div class="col-md-6">
+                  <h6>Result</h6>
+
+                  It was an honor to recieve <b>the prize of "Best MPG by
+                    Machine Learning"</b> out of 20 teams! Our data-driven
+                  strategy was truly acknowledged by Toyota Research
+                  Institute. We were fortunate to get the picture with the
+                  chairman of Toyota Motor Corp. and CEO of TRI.
+
+                  <br>
+                  As for competition result, we achieved 83mpg on average
+                  for 9 laps(42:29). We did great job! We were so close to
+                  Toyota dream team(86mpg) who are the most knowledable
+                  people about Prius. Overall result was 4th position
+                  among 20 teams because we had unfortunate penalties.
+                  
+                  <br>
+	          
+                  Our team got ABC7 news' attention. My name was on TV!
+                  Here is
+                  <a href="http://abc7news.com/…/prius-challenge-brings-slow-…/1783877/">
+                    the source.
+                  </a>
+
+	          <br>
+	          I am looking forward to joining to next year's
+	          autonomous driving Prius Challenge'18.
+	          
+                </div>
+                <div class="col-md-6">
+	          <img src="works/PriusChallenge/result.png" style="width:100%;">
+                </div>
+              </div>
+	    </div>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- IndyCar -->
+    <div class="modal fade" id="IndyCarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+	      <a href="http://priuschallenge.toyotaonramp.com/" target="_blank">
+                Mining Muscle Use Data for Fatigue Reduction in IndyCar
+	      </a>
+	    </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container col-md-12">
+
+              <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+	          <h6>Overview</h6>
+
+                  This research discusses how data analytics on muscle use
+                  in extreme racing conditions can be conducted to find
+                  actionable insights for the driver One of the important
+                  insights is how to minimize driver’s muscle fatigue
+                  during a race, because IndyCar has regulations
+                  forbidding the use of power steering. This research
+                  tackles two technological challenges: 1. data validation
+                  on noisy signal obtained from wearable device in extreme
+                  condition, 2. data cultivation to find actionable
+                  insights for the driver from heterogeneous racing
+                  data. First, we propose a data quality assessment
+                  technique, enabling the judgment of whether data is
+                  reliable or not. This qualitative analysis revealed that
+                  the data validation method works 99.5% accuracy to
+                  classify data as reliable or not. Second, we propose a
+                  data visualization tool based on unsupervised learning
+                  that enables the driver or mechanics to discover useful
+                  feedback. We identified and demonstrated several
+                  actionable insights, e.g., identifying potential
+                  relaxation points.
+
+	          <br>
+	          
+	          <b>Term</b> : 2016.03 - 2016.10
+	          <br>
+	          <b>Software</b>  : python (sklearn, tensorflow, keras,
+	          pandas, numpy), html/js(bootstrap, Grafana, bokeh.js,
+	          Mapbox, node.js), InfluxDB
+                </div>
+                <div class="col-md-2">
+                </div>
+              </div>
+	      
+              <div class="row">
+                <div class="col-md-6">
+	          <h6>Problems</h6>
+
+	          The driver's challenge and data science's challenges are
+	          shown in the right figure.
+
+	          <br><br>
+	          
+	          Yeah, this may sound the straightforward problem
+	          statement though, it was not easy to setup this problem
+	          indeed.
+
+	          First, I had f2f conversation with Tony Kanaan to
+	          discuss his real challenges. (design thinking process)
+	          While most of them were hard to solve due to the lack of
+	          the dataset, some sounded feasible to me. Then, once I
+	          started data analytics and had discussion with various
+	          people, I realized the necessity of the data validation
+	          process.
+
+	          Like this project, innovation works are occasionally
+	          hard to define job contents at first. To me, the hard
+	          challenges of this projects are 1. clarifying the
+	          problem statement and 2. collecting the unique dataset.
+                </div>
+                <div class="col-md-6">
+	          <img src="works/IndyCar/problem.png" style="width:100%; padding:70px 0;">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+	          <img src="works/IndyCar/solution.png" style="width:100%;">
+	          <img src="works/IndyCar/result1.png" style="width:100%;">
+                </div>
+                <div class="col-md-6">
+	          <h6>Solution</h6>
+
+                  The idea of the data validation is that the actual
+                  sensor data is considered as unreliable data if the
+                  difference betweeen actual and predicted value are
+                  big. The prediction model uses car-telemetry data as
+                  features and predict the EMG value. This aims for
+                  prediction model to avoid the bad effect of noisy EMG
+                  values.
+
+	          <br>
+	          
+	          Data cultivation uses the unsupervised learning for
+	          driver or mechanics to understand tremendous data in
+	          more intuitive way.
+
+	          <br>
+
+	          In additino to data analytics, I also created data
+	          visualization WebUI for them. Data validation is shown
+	          in real-time dashboard and data cultivation is shown in
+	          post analytics dashboard. 
+	          
+                </div>
+              </div>
+	      
+              <div class="row">
+                <div class="col-md-6">
+                  <h6>Result</h6>
+
+	          The data validation model has 99.48% accuracy to
+	          classify whether the EMG sensor data is reliable or
+	          unreliable. Yeah, it has good performance. (Please see
+	          the details on my paper.)
+	          
+                  <br>
+
+	          The data cultivation identified the locations where
+	          driver tends to have unstable muscle use and where
+	          driver can take rest more. This may be feedback for the
+	          driver to avoid muscle cramp.
+	          
+                  <br>
+
+	          I presented this research in MIT Sloan Sports Analytics
+	          Conference and NTT R&D Forum '17. The best part is I got
+	          autograph of Tony Kanaan. :D
+	          
+                </div>
+                <div class="col-md-6">
+                  <div class="youtube-player" data-id="tv_naZEFoAA"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+	          <img src="works/IndyCar/result4.png" style="width:100%;">
+                </div>
+                <div class="col-md-6">
+	          <img src="works/IndyCar/achievement.png" style="width:100%;">
+                </div>
+              </div>
+	    </div>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Trirotor -->
+    <div class="modal fade" id="Trirotor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+	      Failsafe for Drone System : Nonlinear System Analytics and
+	      Contorl for Trirotor Drone system
+	    </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container col-md-12">
+
+              <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+	          <h6>Overview</h6>
+
+                  What if a drone loses one control input by accident
+	          while flying? Since a ordinal drone system has 4 inputs,
+	          this research tackles the control problem of 3 inputs
+	          drone model, trirotor.
+                  
+                  <br>
+                  <b>
+                    First, this research revealed the minimal number of
+                    inputs for hovering control from the perspective of
+                    nonlinear control system theory. </b>
+                  The model analysis
+                  reveals that hovering control is impossible for any
+                  three-inputs drone system through the argument of
+                  Locally Asymptotically Stabilizability(LAS).
+
+                  <br>
+                  <b>
+                    Second, this research proposed a nonlinear controller
+                    for an underactuated UAV having three inputs to realize
+                    “circle motion”, the motion that the attitude of UAV
+                    points to the center of circle while the center of mass
+                    moves on a circle orbit.
+                  </b>
+                  The proposed method is redesigning the time-varying
+                  output zeroing controller discretely. This method allows
+                  output functions to be kept zero even though output
+                  functions are changed.
+
+                  <!-- IFAC'11 -->
+                  <!-- 
+                       This paper reveals the minimal number of inputs for
+                       hovering control from the perspective of nonlinear
+                       control system theory. Then, a nonlinear controller is
+                       designed to obtain meaningful motion for an
+                       underactuated UAV with the consideration of the
+                       limitation acknowledged through the model
+                       analysis. Throughout this paper, a particular UAV model
+                       having three rotors is considered as a controlled
+                       object. First, nonlinear state equations are computed
+                       with valid assumptions. Next, the model analysis reveals
+                       that hovering control is impossible for not only the
+                       proposed model but also a generic three-inputs model
+                       through the argument of Locally Asymptotically
+                       Stabilizability(LAS). Finally, numerical simulation
+                       confirms that position control is realizable via Output
+                       Zeroing Control along with preferable attitude.
+                     -->
+                  
+
+                  <!-- CDC -->
+                  <!--
+                       In this paper, a nonlinear controller is designed for an
+                       underactuated UAV having three inputs to realize
+                       “circle motion”, the motion that the attitude of UAV
+                       points to the center of circle while the center of mass
+                       moves on a circle orbit. The proposed method is
+                       redesigning the time-varying output zeroing controller
+                       discretely. This method allows output functions to be
+                       kept zero even though output functions are changed. In
+                       other words, zero dynamics can be controlled by this
+                       method. Finally, numerical simulation shows the validity
+                       of the proposed nonlinear controller.  Trirotor is
+                       awesome.
+                     -->
+
+                  
+                </div>
+                <div class="col-md-2">
+                </div>
+              </div>
+	      
+              <div class="row">
+                <div class="col-md-6">
+	          <h6>Problems</h6>
+	          <b>Q1. What is the limitation in controlling both
+	            position and attitude in 3D (SE(3)) ?</b>
+
+                  <br>
+                  There are 6 states (12 states including velocity) that
+	          needs to be controlled for hovering. How many inputs are
+	          the minimum number of the control inputs for hovering
+	          control? Can this be revealed by mathematical proof?
+                  
+	          <br><br>
+	          
+	          <b>Q2. What control can be done with only 3 inputs?</b>
+                  
+                  Even with the 3 inputs, there must be meaningful motion
+                  that the nonlinear control can achieve such as circle
+                  motion mentioned above. How do we design the nonlinear
+                  controller to realize this motion with only 3 inputs.
+                  
+                </div>
+                <div class="col-md-6" align="center">
+	          <img src="works/Trirotor/Trirotor1.png" style="width:80%;">
+	          <img src="works/Trirotor/Trirotor2.png" style="width:100%;">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+	          <img src="works/Trirotor/solution.png" style="width:100%; padding:40px 0px">
+	          <img src="works/Trirotor/strategy_movement.png" style="width:100%;">
+                </div>
+                <div class="col-md-6">
+	          <h6>Solution</h6>
+	          <b>1. Nonlinear System Analytics for input number revealation</b>
+                  <br>
+                  Previously, M.Ishikawa and M.Sampei revealed a necessary
+                  condition for LAS that is “A system is not feedback
+                  stabilizable if the number of inputs is less than the
+                  dimension of the equilibria submanifold.” In order to
+                  apply this theorem to the generic model of drone system,
+                  I identified the dimension of the equlibria submanifold
+                  of it by using the general mathematical formulation of
+                  drone system.
+                  
+                  <br>
+                  
+	          <b>2. Nonlinear Control Strategy for circle motion</b>
+                  <br>
+
+                  The left figure shows the strategy for the circle motion
+                  control.  First, the system focuses on controlling the
+                  (x,y,z) position control by Output Zeroing
+                  Control. Second, once it is completed, the remaining
+                  dynamics (Zero Dynamics) mainly causes instability to
+                  yaw angle. The idea to control yaw angle is changing the
+                  time-variant output function with maintaining the
+                  (x,y,z) position. In other words, this method enables to
+                  control Zero Dynamics.
+                  
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <h6>Result</h6>
+	          <b>1. The following control limitation is proved.</b>              
+                  <br>
+                  <i>
+                    Theorem : "Assume that UAV is composed of only a rigid
+                    body and propellers, then it is impossible to locally
+                    asymptotically stabilize a generic UAV model having
+                    less than three rotors inputs via continuous state
+                    feedback."
+                  </i>
+                  The details can be found on
+                  <a href="download/IFAC2011_NonlinearControlandModelAnalysisofTrirotorUAVModel_YasuyukiKataoka.pdf" download>
+                    my paper (IFAC'11)
+                  </a>
+                  .
+                  
+                  <br>
+	          <b>2. Circle Motion Control with only three inputs.</b>
+                  <br>
+                  The result of the numerical simulation is shown on right
+                  movie. As you can see, first the (x,y,z) position
+                  control is realized. Second, changing the yaw-angle with
+                  maintaining the (x,y,z) position is realized.  The
+                  details can be found on
+                  <a href="download/CDC2013_CircleMotionControlofTrirotorUAVviaDiscreteOutputZeroing_YasuyukiKataoka.pdf" download>
+                    my paper (CDC'13)
+                  </a>
+                  .
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="youtube-player" data-id="jK2jIDNlDQA"></div>
+                </div>
+                <div class="col-md-6">
+                  <div class="youtube-player" data-id="awWaId3CBTQ"></div>
+                </div>
+              </div>
+	    </div>
+          </div>
+          
+          <div class="modal-footer">        
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!-- DIY : Homemade Speaker -->
+    <div class="modal fade" id="HomemadeSpeaker" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+	      Yasu's DIY Factory : Homemade Speaker
+	    </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container col-md-12">
+
+              <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+	          <h6>Behind Story</h6>
+
+                  What is the things to which you feel affection? Do you
+                  have something that you are using for more than 20
+                  years?
+                  
+                  <br>
+
+                  I acknoledge that I am a heavy user of Amazon. It is
+                  extremely time/cost effective way to obtain what I need
+                  though, it is also very easy to dispose of them. What a
+                  great era of mass production and mass consumption.
+
+                  <br>
+                  
+                  However, I also feel it important to keep meaningful
+                  things to my life. If something you own reminds of very
+                  important memory in your life, they may be special for
+                  you and you may feel affection to it.
+
+                  <br>
+
+                  DIY is great hobby, which my father taught me (even
+                  through DNA, I guess). Since I was a young kid, I made
+                  every furnitures, toys... They are still in my parents
+                  house and they remind me of my childhood. DIY is not
+                  always cost effective and definitely not time effective
+                  way.  But they tend to last long and give me special
+                  feeling, affection.
+                  
+                  <br>
+
+	          <h6>My lifelong speaker, maybe</h6>
+                  
+                  This time, I made speaker, the simple model of bass
+                  reflex. Making speaker means here is to design a box to
+                  maximize the performance of a speaker unit. This work
+                  was great and I still love them: design, texture and, of
+                  course, the sound quality. The color and speaker unit
+                  have been 'aged' and will be classical until I die. :D
+                  Now, I need to protect them from my baby's poking. But
+                  even if it is broken by accident, I am sure I will
+                  repair them and get more affection to it. 
+                  
+                  <br>
+
+	          <h6>The steps</h6>
+                  Here is the summary of the steps
+                  <ol type="I">
+                    <li>Decide the speaker unit</li>
+
+                    Depending on the limitation of your space and the
+                    requirement of sound quality and your budget, you may
+                    want to decide the speaker unit first. If needed,
+                    tweeter should be added for better performance for
+                    high frequency sound.
+
+                    In Japanese, this place is very helpful. You may want
+                    to Akihabara to get feedback from the most
+                    knowledgable people.
+                    <a href="http://www.koizumi-musen.com/">Koizumi Musen
+                    </a>
+                    
+                    <li>Design the box</li>
+
+                    A bass reflex system (also known as a ported, vented
+                    box or reflex port) is a type of loudspeaker enclosure
+                    that uses a port (hole) or vent cut into the cabinet
+                    and a section of tubing or pipe affixed to the
+                    port. (from wikipedia) Thus, the size of the
+                    enclosure(bos), the hole affect the quality of the
+                    sound.  This should be designed depending on the
+                    specification of the speaker unit that you chose.
+
+                    In
+                    Japanese, <a href="http://www.asahi-net.or.jp/~ab6s-med/NORTH/SP/bassreff.htm">
+                      this site </a> may help to design the enclosure(box).
+
+                    
+                    <li>Go to home center and get materials</li>
+
+                    There are various woods. Every woods have different
+                    characteristics. Stiff is said to be better, but I
+                    chose the wood by the texture and my budget. You may
+                    want to pay attention to the direction of the grain.
+                    Do not forget to get the acoustical material, which
+                    should be attached to insider of the speaker. Plus,
+                    you need to get wiring cable and terminal for it.
+                    
+                    <li>Assemble the materials and paint</li> You just
+                    need to assemble them. I am not writing details here,
+                    but just create whatever you want. If you make any
+                    mistake, that is part of your memory and it will
+                    become the reason why you feel affection, maybe.
+                    
+                    <li>Test(aging)</li> Some people talk about aging. To
+                    me, it sounds like urban legend...  The idea of the
+                    aging is that the more you use the speaker, the better
+                    quality sound you can experience. Some people play
+                    music for several days, which makes the speaker unit
+                    adapts the design of the enclosure you designed.
+
+                    <br>
+                    
+                    However, I personally do not think my sense of hearing
+                    quality is good enough to distinguish very slight but
+                    important difference of music...
+                    
+                  </ol>              
+                </div>
+                <div class="col-md-2">
+                </div>
+              </div>
+	    </div>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- SSAC : Loose Ball Detection, Basketball -->
+    <div class="modal fade" id="BasketballAnalytics" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+	      Automatic Loose Ball Detection by ball trajectory analytics
+	    </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container col-md-12">
+
+              <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+	          <h6>Overview</h6> I have played basketball since I was 6
+                  years old. As I love it, I joined to
+	          <a href="http://www.sloansportsconference.com/activities/hackathon/">
+		    MIT Sloan Sports
+		    Analytics Hackathon
+	          </a> hosted by ESPN in Mar.2017. The theme of the
+                  hackathon was "Measure the unmeasureable in basketball"
+                  such as teamwork, mentality, leadership and heart. Yeah,
+                  sounds very tough. This is specifically hard task as a
+                  data science task, because there are no ground truth of
+                  these factors...
+
+	          <br>
+	          
+                  For this hackathon, I decided to focus on 'loose ball
+                  detection'. In basketball, loose ball is the moment
+                  audience can fell player's fighting spirits. Not only
+                  that, chasing loose ball has chance to 1. excite
+                  audience, 2. inspire teammates and 3. change momentum of
+                  the game.
+	          <br>
+                  
+                  Conventionally in the given dataset by ESPN (as far as I
+                  thoroughly surveyed), the loose ball has not been
+                  recorded unless it is related to foul. Thus, finding
+                  loose ball automatically would be helpful to understand
+                  player's latent power of mentality.
+	          <br>
+
+
+	          <b>Term</b> : 1~2days 
+	          <br>
+	          <b>Software</b>  : python(pandas, numpy), html/js(bokeh.js)
+
+                </div>
+                <div class="col-md-2">
+                </div>
+              </div>
+	      
+              <div class="row">
+                <div class="col-md-6">
+	          <h6>Problems</h6>
+	          <b>Q. How is it possible to detect loose ball?</b>
+	          Chasing loose ball could be one of the important actions
+	          to tell player's fighting spirits. However, the loose
+	          ball is not recorded in stats. Moreover, there may not
+	          be well-defined definition of loose ball in literature.
+
+	          <br>
+	          
+	          The given dataset includes the both ball and players
+	          trajectory. Thus, the challenge is how to define the
+	          loose ball in mathematical formulation.
+	          
+	        </div>
+                <div class="col-md-6">
+	          <img src="works/LooseBallDetection/problem.png" style="width:100%; padding:15px 0;">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+	          <img src="works/LooseBallDetection/solution.png" style="width:100%; padding:30px 0;">
+                </div>
+                <div class="col-md-6">
+	          <h6>Solution</h6>
+
+	          The left figure desribes my approach to detect loose
+	          ball.  Based on observational definittion, the
+	          mathematical formulation was set up. If the trajectory
+	          data satisfies all of the conditions at certain moment,
+	          then the moment can be the time somebody is chasing
+	          loose ball.
+
+	          <br>
+
+	          Now, this is a merely heuristic approach. Once the
+	          labeled data of loose ball is available, I should apply
+	          the supervised learning appoach. Maybe, this is typical
+	          type of deep learning task!
+                </div>
+              </div>
+	      
+              <div class="row">
+                <div class="col-md-6">
+                  <h6>Result</h6>
+
+	          Based on the above rule-based approach, the right movie
+	          shows one of the example of the loose ball. Here, you can see
+	          two of each team members chase the ball.
+	          
+                  <br>
+
+	          There are 180+ applicants to this hackathon, and I was
+	          chosen for the 40 participants! Unfortunately, I could
+	          not make it to finalist this time. (First time to miss
+	          the award in hackathon!) It looked like the host, ESPN,
+	          wanted to know more creative idea, not cool software
+	          implementation. I learned that competing sports industry
+	          is very hard unless you have really deep knowledge about
+	          that sports. Even though my hobby is basketball, my
+	          creativity about basketball may not be enough to satisfy
+	          ESPN.
+                </div>
+                <div class="col-md-6">
+                  <div class="youtube-player" data-id="iSdPbMJNEx4"></div>
+                  <!-- 
+	               <img src="works/LooseBallDetection/demo.png" style="width:100%; padding:45px">
+                     -->
+                </div>
+              </div>
+	    </div>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Battery Prediction -->
+    <div class="modal fade" id="BatteryPrediction" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+	      Smart Fleet Management System using IoT-driven Battery Prediction 
+	    </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+          <div class="modal-body">
+            <div class="container col-md-12">
+
+              <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+	          <h6>Overview</h6>
+
+                  I participated in Mercedes Benz Hackathon at Silicon
+                  Valley '16 as a data scientist. The challenge was to
+                  create the innovative fleet management system within 24
+                  hours. I worked with people whom I met for the first
+                  time on site and successfully delivered the smart fleet
+                  management PoC. We decided to implement the future
+                  vision of fleet management based on the core battery
+                  prediction functionality. This prediction would be
+                  accurately conducted by machine leanring using IoT data
+                  and CAN data. Using this prediction, we proposed the new
+                  smart fleet system with 1. smart route planning,
+                  2. real-time navigation feedback.
+                  
+                  <br>
+                  The result of the hackathon was 2nd prize among 120+
+                  applicants. The juries judged the quality of both idea
+                  and implementation.
+                  
+	          <br>
+	          
+	          <b>Term</b> : 2016.11 (24 hours)
+	          <br>
+	          <b>Software</b> : python (sklearn, pandas, numpy),
+	          html/js(angular JS, Grafana, Mapbox), InfluxDB
+                  
+                </div>
+                <div class="col-md-2">
+                </div>
+              </div>
+	      
+              <div class="row">
+                <div class="col-md-12">
+	          <h6>Problems</h6>
+
+	          <b>Q. How to improve EV's battery prediction accuracy?</b>
+                  
+                  <br>
+                  In general, stopping by charging stations is a loss in
+                  fleet management businesses. However, when planning the
+                  route, it looks like hard to predict battery
+                  consumption. (Based on my experience using Nissan Leaf
+                  for more than one year, the battery prediction
+                  functionality does not count the characteristics of road
+                  and can not accurately predict battery consumption.) I
+                  think this is because many factors affect EV's battery
+                  performance such as the weight of the cargo, weather,
+                  temperature, route (gradient of terrain, traffic), time
+                  and how you drive.  What if all of these factors are
+                  available through IoT sensors? The prediction
+                  performance should be dramatically improved!
+
+                  <br>
+                  
+	          <b>Q. If the system can predict EV's battery consumption
+	            more accurately, what does the future fleet management
+	            for delivering system look like?</b>
+
+                  There are many use cases using battery prediction
+	          though, we decided to focus on two functions : 1. smart
+	          route planning, 2. real-time navigation feedback.
+                  
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <!--
+	               <img src="works/BatteryPrediction/result.png" style="width:100%; padding:20px 0px">
+                     -->
+                  <div class="youtube-player" data-id="9heRcmzkQ1U"></div>
+                </div>
+                <div class="col-md-6">
+	          <h6>Solution</h6>
+	          <b>1. Smart Route Planning</b>
+                  <br>
+                  Every car has different battery capacity and remaining
+                  battery. Each of drivers has different driving behavior.
+                  Depending on the combination of the driver and the car,
+                  the best routing path may differ. Some routes require
+                  the driver to drop by charging station. Some routes
+                  should be the most energy efficient route to avoid
+                  dropping by charging station. Some routes should be the
+                  fastest route due to Amazon Prime. Using battery
+                  prediction, the combination of car, driver and route
+                  can be optimally matched.
+                  
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+	          <b>2. Real-time Navigation Feedback</b>
+                  <br>
+                  The fleet manager should want to have the real-time
+                  monitoring tool to see each driver's performance.  This
+                  tool visualizes the battery prediction and current
+                  value. While some driver follows original planning of
+                  the battery use, the other drivers may not be able to
+                  follow it. In this case, fleet manager can tell driver
+                  to change driver behavior or go to the charging station
+                  during lunch time.
+                </div>
+              </div>
+              
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <h6>Result</h6>
+
+                  Our team, FleetWise, won the 2nd prize in this
+                  hackathon. It was very nice to meet new people, discuss
+                  the challenges in this industry and think about
+                  something new in the IoT and Automotice Era.
+
+                  <br>
+                  In future, once tremendous data of CAN data and IoT data
+                  are collected, we can create the knowledge base of the
+                  fuel consumption map. Like the traffic information is
+                  attributed to edges of road network, I think the battery
+                  consumption level can be added to the edges too. Using
+                  this knowledge base, my leaf can be wiser too. :D
+                  
+                  <br>
+                  Photo : I was fortunate to take a photo with Arwed
+                  Niestroj, the CEO of Mercedes-Benz Research &
+                  Development North America.
+                  
+                </div>
+                <div class="col-md-6">
+                  <!-- This is going to be movie -->
+	          <img src="works/BatteryPrediction/award.jpg" style="width:100%;">
+                </div>
+              </div>
+	    </div>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--
+         Acrobot Simulation
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/b4B54RElhdA" frameborder="0" allowfullscreen></iframe>
+
+         Acrobot Jump experiment
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/IJkwarPrRdg" frameborder="0" allowfullscreen></iframe>
+
+         Acrobot Stabilization experiment
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/vCzMNE6Atjg" frameborder="0" allowfullscreen></iframe>         
+       -->
+
+    <!-- 
+         Monorotor
+         https://youtu.be/IfAvaktGtBo
+       -->
+
+    <!--
+         Action Mining
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/fHq2bBj7hEc" frameborder="0" allowfullscreen></iframe>
+       -->
+
+    <!--
+         Contribution Analytics
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/h9nVjc9Iw7s" frameborder="0" allowfullscreen></iframe>         
+       -->
+
+    <!-- MODAL DEFINITION END -->
+
+    
+
+
+
     <!-- start preloader -->
     <div id="loader-wrapper">
       <div class="logo"></div>
@@ -60,14 +1282,14 @@
       </div>
     </div>
 
-
-    
     <!-- end preloader -->
     <!--[if lt IE 8]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
+
     
-    <!-- START -->
+    <!-- Card START -->
 
     <!-- start portfolio Section -->
     <section id="protfolio_sec">
@@ -591,12 +1813,16 @@
     <!-- End footer Section -->
 
     <script src="js/isotope.pkgd.min.js"></script>
+    <!--
     <script src="js/jquery-ui.js"></script>
+    -->
     <script src="js/appear.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/waypoints.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
+    <!--
     <script src="js/showHide.js"></script>
+    -->
     <!--  
     <script src="js/jquery.nicescroll.min.js"></script>
     -->    
@@ -607,8 +1833,9 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
+    <!--
     <script src="showHide.js" type="text/javascript"></script>
-
+    -->
     <script type="text/javascript">
 
 //    $(document).ready(function(){
