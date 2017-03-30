@@ -187,21 +187,27 @@
                   behavior cloning is to replicate the driving performance
                   of human by using machine learning whose model uses the
                   camera data as feature(input) and the steering angle as
-                  label(output). Let's see how deep learning performs for
-                  this computer vision task.
+                  label(output).
                   
                   <br>
-                  The deep learning model I used is almost same as
-                  NVIDIA's self-driving car, 5 convolutional layers and 4
-                  full connected layers. Plus, I did data augmentation and
-                  hyper parameter tuning, which is the hardest part of
-                  deep learning work, I believe.
+                  Obviously, deep learning is the first model that
+                  could be used for this task.　The deep learning
+                  model I used is almost same as NVIDIA's self-driving
+                  car, 5 convolutional layers and 4 full connected
+                  layers. Plus, I did data augmentation and hyper
+                  parameter tuning, which is the hardest part of deep
+                  learning work, I believe.
                   
                   <br>
                   This project was part of the Udacity's Self-driving
-                  Engineer course. While it was super fun to let my model
-                  run on simultaion, there are tons of things to achieve
-                  better performance of deep learning model.
+                  Engineer course. While it was super fun to let my
+                  model run on simultaion, there are tons of things to
+                  achieve better performance of deep learning model.
+
+	          <b>Term</b> : 2017.03 (1 week)
+	          <br>
+	          <b>Software</b>  : python (sklearn, tensorflow, keras,
+	          pandas, numpy)
                   
                 </div>
                 <div class="col-md-2">
@@ -214,7 +220,18 @@
 	          <b>How to train the machine learning model that
 	            successfully run on the simulator?</b>
                   <br>
-                  Using the camera (assuming the dash cam), 
+
+                  Using the three cameras (assuming the dash cam) as
+                  input, the objective of this project is to predict
+                  the steering angle so that the car does not deviate
+                  from the course. The challenging part is where curve
+                  is sharp and the side lane is missing. Data
+                  augmentaion, data preprocessing and deep learning
+                  model are tweaked trial and error.
+
+                  <br>
+                  The velocity control is done by simple PI
+                  controller.
                   
                 </div>
                 <div class="col-md-6">
@@ -224,10 +241,22 @@
               
               <div class="row">
                 <div class="col-md-6">
-	          <img src="works/BehaviorCloning/solution1.png" style="width:100%;">
+	          <img src="works/BehaviorCloning/solution.png" style="width:100%;">
                 </div>
                 <div class="col-md-6">
 	          <h6>Solution</h6>
+                  The model I used for this task is the NVIDIA's
+                  self-driving car model which has 5 convolutional
+                  layers and 4 full connected layers. This ended up
+                  about 3 million parameter to my case.
+                  
+                  <br>
+                  The three images from cameras are simply augmented
+                  by flipping. The preprocess is just simple gray
+                  scale converstion + cropping. I spent a while for
+                  trial and error with various preprocess such as
+                  blurring, canny edge detection, contrast adjustment,
+                  but the simple gray works best for now.
                   
                 </div>
               </div>
@@ -235,11 +264,22 @@
               <div class="row">
                 <div class="col-md-6">
                   <h6>Result</h6>
-	          It successffuly runs of the course.
-
+	          One of the result is shown in the right movie. It
+	          successfully completes one lap of the
+	          course. Obviously, this simulation uses new data
+	          (test data), so this can adapt to new dataset of
+	          this course.
+                  
                   <br>
-
-                  There is one more challenging different track where it has uphill and downhills
+                  What if the course is changed? The idea of behavior
+                  cloning requires different dataset to secure the
+                  driving perfomrance. However, this tranied model
+                  could be helpful when transfer learning is used for
+                  new course. There is one more challenging different
+                  track in Udacity's simulator where it has uphill and
+                  downhills. This 2nd course is the one in which even
+                  human feels difficulties to control the car. I will
+                  try it later on.
                   
                 </div>
                 <div class="col-md-6">
@@ -783,7 +823,268 @@
       </div>
     </div>
 
+    <!-- Monorotor -->
+    <div class="modal fade" id="Monorotor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+	      Semi-Hovering Control for Monorotor using Discrete Output Zeroing
+	    </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
 
+          <div class="modal-body">
+            <div class="container col-md-12">
+
+              <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+	          <h6>Overview</h6>
+                  Do you know <a href="https://doraemon.mangawiki.org/take-copter/">
+                    Take-copter
+                  </a>(figure below)? This tool is used in one of the
+                  most famous SF animation in Japan, Doraemon. Yes, it
+                  is impossible to flying without counter rotation of
+                  the body due to law of action and reaction. In
+                  reality, toys usually has two rotor to cancel this
+                  effect. Yeah, it sounds definitely impossible to
+                  control hovering motion by only one input.
+                  
+                  <br>
+                  <br>
+                  This research proposes a nonlinear controller
+                  realizing periodic motion to MonoRotor type flying
+                  robot having no equilibrium point. The control
+                  target is semi-hovering; a motion that passes a
+                  desired non-equilibrium point at which position and
+                  attitude stop periodically. In order to achieve this
+                  control objective, we propose discontinuous and
+                  time-varying output zeroing controller which ends up
+                  controlling Zero Dynamics. The numerical simulation
+                  and stability analysis show the validity of the
+                  suggesting controller design method.
+                  
+	          <img src="works/Monorotor/takecopter.png" style="width:80%;
+                                                                   display:block;
+                                                                   margin-left:auto;
+                                                                   margin-right:auto;">
+                  
+                </div>
+                <div class="col-md-2">
+                </div>
+              </div>
+	      
+              <div class="row">
+                <div class="col-md-6">
+	          <h6>Problems</h6>
+
+                  The Monorotor system has structural underactuation,
+                  since the number of input is less than the number of
+                  states. (two states : posture and height, one input
+                  : single rotor) In addition, Monorotor robot does
+                  not own the equilibrium point. Because of these
+                  properties, the only way to realize the meaningful
+                  motion is semi-hovering, which is a periodic motion
+                  that passes at the desired non-equilibrium point in
+                  each cycle. Thus, this control objective requires
+                  Zero Dynamics to be controlled. The main
+                  contribution of this research is the controller
+                  design that results in controlling Zero Dynamics.
+                  
+                </div>
+                <div class="col-md-6" align="center">
+	          <img src="works/Monorotor/monorotor.png" style="width:80%;
+                                                                  display:block;
+                                                                  margin-left:auto;
+                                                                  margin-right:auto;">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+	          <img src="works/Monorotor/frequency.png" style="width:100%; padding:40px 0px">
+                </div>
+                <div class="col-md-6">
+	          <h6>Solution</h6>
+                  <b>Discrete Output Zeroing </b>
+                  The strategy to realize semi-hovering has the
+                  following two steps. 1st step controls posture, then
+                  2nd step controls height. The key idea is that the
+                  2nd step, height control, needs to be done with
+                  maintaining 1st step goal. When designing output
+                  zeroing control to control posture, one parameter is
+                  free parameter which is the frequency of the rotor.
+                  Changing the frequency results in different height.
+                  Wisely changing the free parameter, frequency,
+                  enables to control height! In this case, height
+                  becomes zero dynamics when 1st step is
+                  realized. Thus, this method can control zero
+                  dynamics discretely.
+                  
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <h6>Result</h6>
+	          <b>Successful Semi-hovering in Simulation</b>
+                  
+                  In this research, a new way to design time-varying
+                  non-linear controller that realize periodic motion
+                  is proposed. This method also suggests a way to
+                  control Zero Dynamics for Monorotor type flying
+                  robot. Numerical simulation verified the validity of
+                  the suggesting controller, achieving semi-hovering
+                  motion successfully.  The details can be found on
+                  <a href="download/SICE2010_PeriodicMotionControlforMonorotortypeFlyingRobotatNon-equilibriumPointviaZero DynamicsController_YasuyukiKataoka.pdf" download>
+                    my paper (SICE'11)
+                  </a>
+                  .
+
+                  <br>
+                  (What if the rotation frequency corresponds to the
+                  fps of the video capturing in the world of
+                  Doraemon... Yeah, their world also obeys the law of
+                  physics. :D)
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="youtube-player" data-id="IfAvaktGtBo"></div>
+                </div>
+              </div>
+	    </div>
+          </div>
+          
+          <div class="modal-footer">        
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JumpingRobot -->
+    <div class="modal fade" id="AcrobotJump" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+	      jumping motion control using unstable Zero Dynamics for Acrobot
+	    </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="container col-md-12">
+
+              <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+	          <h6>Overview</h6>
+                  Acrobot is two-link manipulator which has only one
+                  input (motor) between these links. This system is
+                  called 'underactuated system', because the number of
+                  input is less than the number of states.  This
+                  research aims for jumping and landing motion control
+                  for Acrobot. 
+                </div>
+                <div class="col-md-2">
+                </div>
+              </div>
+	      
+              <div class="row">
+                <div class="col-md-6">
+	          <h6>Problems</h6>
+                  <b>Q. How do we control Acrobot without using linear approximation?</b>
+                  While linear approximation control works in limited
+                  conditions, nonlinear controller gives more flexible
+                  and stable performance. Especially, this is very
+                  interesting research topic, as the controller
+                  utilizes 'unstable' zero dynamics for jumping and
+                  'stable' zero dynamics for landing phase.
+                  
+                </div>
+                <div class="col-md-6" align="center">
+	          <img src="works/AcrobotJump/acrobotjump2.png" style="width:100%;">
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="youtube-player" data-id="b4B54RElhdA"></div>
+                </div>
+                <div class="col-md-6">
+	          <h6>Solution</h6>
+                  As a control strategy, I defined 5 different phase.
+                  1. transition phase aims for changing posture for
+                  jumping 2. jumping phase aims for jumping off from
+                  ground 3. flying phase aims for changin posture for
+                  landing phase 4. impact phase provides strong
+                  external force.  5. landing phase aims for
+                  stabilizing acrobot again.
+                  
+                  At phase 1 and 5, controller uses output zeroing
+                  whose output fuction is based on angular
+                  momentum. Using this method makes Zero Dynamics
+                  stable.
+                  
+                  At phase 2, controller uses output zeroing whose
+                  output fuction is based on the direction of flying
+                  path. Using this method makes Zero Dynamics
+                  unstable.
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">                
+
+                  <h6>Result</h6>
+
+                  In simulation, it successfully goes through five
+                  different phases and suceeded in flying and landing.
+
+                  <br>
+                  In experiment, both flying phase and landing phase
+                  went well. In this experiment, we used the air table
+                  to realize the half gravity situation. This air
+                  table has a bunch of tiny holes which blow
+                  compressed air to make Acrobot levitate from the
+                  board. These effect of air may not be small enough
+                  to neglect. Thus, more robust controller would be
+                  needed.
+                  
+                  <a href="download/SICE2010_PeriodicMotionControlforMonorotortypeFlyingRobotatNon-equilibriumPointviaZero DynamicsController_YasuyukiKataoka.pdf" download>
+                    my paper (SICE'11)
+                  </a>
+                  .
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">                
+                  <div class="youtube-player" data-id="IJkwarPrRdg"></div>                  
+                </div>
+                <div class="col-md-6">
+                  <div class="youtube-player" data-id="vCzMNE6Atjg"></div>                  
+                </div>
+              </div>
+	    </div>
+          </div>
+          
+          <div class="modal-footer">        
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
 
 
 
@@ -1149,7 +1450,7 @@
                   and how you drive.  What if all of these factors are
                   available through IoT sensors? The prediction
                   performance should be dramatically improved!
-
+                  
                   <br>
                   
 	          <b>Q. If the system can predict EV's battery consumption
@@ -1229,7 +1530,7 @@
                 </div>
                 <div class="col-md-6">
                   <!-- This is going to be movie -->
-	          <img src="works/BatteryPrediction/award.jpg" style="width:100%;">
+	          <img src="works/BatteryPrediction/award.jpg" style="width:100%; padding:40px 0;">
                 </div>
               </div>
 	    </div>
@@ -1305,11 +1606,11 @@
 	    </a>
 	  </div>
 	  <div class="col-sm-6 col-xs-6 text-right dl-share">
-              <a class="btn btn-success" href="publication.html"
-		      align="right">
-		<span class="fa fa-file-text-o"></span>
-		Publication
-	      </a>
+            <a class="btn btn-success" href="publication.html"
+	       align="right">
+	      <span class="fa fa-file-text-o"></span>
+	      Publication
+	    </a>
           </div>
 	</div>
 
@@ -1323,13 +1624,13 @@
 	    <div class="portfolio-filter text-uppercase text-center">
 	      <ul class="filter" style="padding-left:0px">
 		<li class="active" data-filter="*"
-			style="min-width:150px;">All</li>
+                    style="min-width:150px;">All</li>
 		<li data-filter=".data-science"
-			style="min-width:150px;">Data Science</li>
+                    style="min-width:150px;">Data Science</li>
 		<li data-filter=".robotics"
-			style="min-width:150px;">Robotics</li>
+                    style="min-width:150px;">Robotics</li>
 		<li data-filter=".hobby"
-			style="min-width:150px;">Hobby</li>
+                    style="min-width:150px;">Hobby</li>
 	      </ul>
 	    </div>
 	  </div>
@@ -1337,198 +1638,198 @@
 
 
         
-	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs12" style="align:center;">
-	    <div class="all-portfolios">
-	      <!-- row 1 -->
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs12" style="align:center;">
+	  <div class="all-portfolios">
+	    <!-- row 1 -->
 
-	      <!-- Card : Data Science : Behavior Cloning -->
-	      <div class="container text-center">
-		<div class="col-sm-3 col-lg-3 col-md-3 col-xs-3
-			    single-portfolio data-science robotics">
-		  <div class="card-container">
-		    <a href="#"  data-toggle="modal" data-target="#BehaviorCloning">
-		      <div class="card_p">
-			<div class="front" style="text-align: center;">
-			  <img class="top"
-			       src="works/BehaviorCloning/behaviorcloning.png"
-			       alt=""
-                               style="border:solid 3px #DAA520">
-			  <span class="icon_title">
-			    Drive Behavior Cloning
-			  </span>
-			</div>
-			<div class="back"
-			     style="background:#DAA520;">
-			  <ul style="list-style:none;">
-			    <li>
-			      <h2>
+	    <!-- Card : Data Science : Behavior Cloning -->
+	    <div class="container text-center">
+	      <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3
+			  single-portfolio data-science robotics">
+		<div class="card-container">
+		  <a href="#"  data-toggle="modal" data-target="#BehaviorCloning">
+		    <div class="card_p">
+		      <div class="front" style="text-align: center;">
+			<img class="top"
+			     src="works/BehaviorCloning/behaviorcloning.png"
+			     alt=""
+                             style="border:solid 3px #DAA520">
+			<span class="icon_title">
+			  Drive Behavior Cloning
+			</span>
+		      </div>
+		      <div class="back"
+			   style="background:#DAA520;">
+			<ul style="list-style:none;">
+			  <li>
+			    <h2>
 			      Steering Control for Self-driving Car
-                              </h2>
-			      <p>Applying deep Learning model of
+                            </h2>
+			    <p>Applying deep Learning model of
 			      NVIDIA's self-driving car to predict
 			      steering angle on simulator.
-			      </p>
-			    </li>
-			  </ul>
-			</div>
+			    </p>
+			  </li>
+			</ul>
 		      </div>
-		    </a>
-		  </div>
-                </div>
+		    </div>
+		  </a>
+		</div>
               </div>
+            </div>
 
-	      <!-- Card : Data Science : Prius Challenge -->
-	      <div class="container text-center">
-		<div class="col-sm-3 col-lg-3 col-md-3 col-xs-3
-			    single-portfolio data-science">
-		  <div class="card-container">
-		    <a href="#"  data-toggle="modal" data-target="#PriusChallengeModal">
-		      <div class="card_p">
-			<div class="front" style="text-align: center;">
-			  <img class="top"
-			       src="works/PriusChallenge/Prius4.png"
-			       alt=""
-                               style="border:solid 3px #32CD32"/>
-			  <span class="icon_title">
-			    Prius Challenge
-			  </span>
-			</div>
-			<div class="back"
-			     style="background:#32CD32;">
-			  <ul style="list-style:none;">
-			    <li>
-			      <h2>
-				Prius Challenge '17
-				<br>by Toyota Research Institute
-                              </h2>
-			      <p>Data-driven control design
-				  (gear, throttle, brake, EV-mode)
-				  to maximize mpg using machine learning
-				</p>
-			    </li>
-			  </ul>
-			</div>
+	    <!-- Card : Data Science : Prius Challenge -->
+	    <div class="container text-center">
+	      <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3
+			  single-portfolio data-science hobby">
+		<div class="card-container">
+		  <a href="#"  data-toggle="modal" data-target="#PriusChallengeModal">
+		    <div class="card_p">
+		      <div class="front" style="text-align: center;">
+			<img class="top"
+			     src="works/PriusChallenge/Prius4.png"
+			     alt=""
+                             style="border:solid 3px #32CD32"/>
+			<span class="icon_title">
+			  Prius Challenge
+			</span>
 		      </div>
-		    </a>
-		  </div>
-                </div>
+		      <div class="back"
+			   style="background:#32CD32;">
+			<ul style="list-style:none;">
+			  <li>
+			    <h2>
+			      Prius Challenge '17
+			      <br>by Toyota Research Institute
+                            </h2>
+			    <p>Data-driven control design
+			      (gear, throttle, brake, EV-mode)
+			      to maximize mpg using machine learning
+			    </p>
+			  </li>
+			</ul>
+		      </div>
+		    </div>
+		  </a>
+		</div>
               </div>
+            </div>
 
-	      <!-- Card : Data Science : IndyCar -->
-	      <div class="container text-center">
-		<div class="col-sm-3 col-lg-3 col-md-3 col-xs-3
-			    single-portfolio data-science">
-		  <div class="card-container">
-		    <a href="#"  data-toggle="modal" data-target="#IndyCarModal">
-		      <div class="card_p">
-			<div class="front" style="text-align: center;">
-			  <img class="top"
-			       src="works/IndyCar/Indy2.png"
-			       alt=""
-                               style="border:solid 3px #0000CD"/>
-			  <span class="icon_title">
-                            IndyCar
-			  </span>
-			</div>
-			<div class="back"
-			     style="background:#0000CD;">
-			  <ul style="list-style:none;">
-			    <li>
-			      <h2>IndyCar Analytics for
-                                <br>Chip Ganassi Racing</h2>
-				<p>Data anlytics & visulization using
+	    <!-- Card : Data Science : IndyCar -->
+	    <div class="container text-center">
+	      <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3
+			  single-portfolio data-science">
+		<div class="card-container">
+		  <a href="#"  data-toggle="modal" data-target="#IndyCarModal">
+		    <div class="card_p">
+		      <div class="front" style="text-align: center;">
+			<img class="top"
+			     src="works/IndyCar/Indy2.png"
+			     alt=""
+                             style="border:solid 3px #0000CD"/>
+			<span class="icon_title">
+                          IndyCar
+			</span>
+		      </div>
+		      <div class="back"
+			   style="background:#0000CD;">
+			<ul style="list-style:none;">
+			  <li>
+			    <h2>IndyCar Analytics for
+                              <br>Chip Ganassi Racing</h2>
+			      <p>Data anlytics & visulization using
 				EMG sensor to find actionable insights
 				to the driver, Tony Kanaan.
-				</p>
-			    </li>
-			  </ul>
-			</div>
+			      </p>
+			  </li>
+			</ul>
 		      </div>
-		    </a>
-		  </div>
-                </div>
-              </div>
-
-              
-	      <!-- Card : Trirotor Drone Robot 1-->
-	      <div class="container text-center">
-		<div class="col-sm-3 col-lg-3 col-md-3 col-xs-3
-			    single-portfolio robotics">
-		  <div class="card-container">
-		    <a href="#"  data-toggle="modal" data-target="#Trirotor">
-		      <div class="card_p">
-			<div class="front" style="text-align: center;">
-			  <img class="top"
-			       src="works/TriRotor/trirotor.png"
-			       alt=""
-                               style="border:solid 3px #ff0000"/>
-			  <span class="icon_title">
-			    Trirotor Drone
-			  </span>
-			</div>
-			<div class="back"
-				style="background:#ff0000;">
-			  <ul style="list-style:none;">
-			    <li>
-			      <h2>Circle Motion Control via Discrete Output Zeroing</h2>
-				<p>What if a drone loses one control
-				  input during flying...? This
-				  research reveals the control
-				  limitation and proposes the possible
-				  control method under this situation.
-				</p>
-			    </li>
-			  </ul>
-			</div>
-		      </div>
-		    </a>
-		  </div>
+		    </div>
+		  </a>
 		</div>
               </div>
-	      
-	      <!-- Card : Robotics MonoRotor -->
-	      <div class="container text-center">
-		<div class="col-sm-3 col-lg-3 col-md-3 col-xs-3
-			    single-portfolio robotics">
-		  <div class="card-container">
-		    <a href="#"  data-toggle="modal" data-target="#PriusChallengeModal">
-		      <div class="card_p">
-			<div class="front" style="text-align: center;">
-			  <img class="top"
-			       src="works/MonoRotor/monorotor.png"
-			       alt=""
-                               style="border:solid 3px #622569"/>
-			  <span class="icon_title">
-			    MonoRotor
-			  </span>
-			</div>
-			<div class="back"
-			     style="background:#622569;">
-			  <ul style="list-style:none;">
-			    <li>
-			      <h2>
-				Nonlinear Control Theory for MonoRotor
-		              </h2>
-			      <p>Periodic Motion Control for Monorotor
-			      type Flying Robot at Non-equilibrium
-			      Point via Zero Dynamics Controller
-			      </p>
-			    </li>
-			  </ul>
-			</div>
+            </div>
+
+            
+	    <!-- Card : Trirotor Drone Robot 1-->
+	    <div class="container text-center">
+	      <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3
+			  single-portfolio robotics">
+		<div class="card-container">
+		  <a href="#"  data-toggle="modal" data-target="#Trirotor">
+		    <div class="card_p">
+		      <div class="front" style="text-align: center;">
+			<img class="top"
+			     src="works/TriRotor/trirotor.png"
+			     alt=""
+                             style="border:solid 3px #ff0000"/>
+			<span class="icon_title">
+			  Trirotor Drone
+			</span>
 		      </div>
-		    </a>
-		  </div>
+		      <div class="back"
+                           style="background:#ff0000;">
+			<ul style="list-style:none;">
+			  <li>
+			    <h2>Circle Motion Control via Discrete Output Zeroing</h2>
+			    <p>What if a drone loses one control
+			      input during flying...? This
+			      research reveals the control
+			      limitation and proposes the possible
+			      control method under this situation.
+			    </p>
+			  </li>
+			</ul>
+		      </div>
+		    </div>
+		  </a>
 		</div>
 	      </div>
-	      <!-- end of row 1 -->
+            </div>
+	    
+	    <!-- Card : Robotics MonoRotor -->
+	    <div class="container text-center">
+	      <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3
+			  single-portfolio robotics">
+		<div class="card-container">
+		  <a href="#"  data-toggle="modal" data-target="#Monorotor">
+		    <div class="card_p">
+		      <div class="front" style="text-align: center;">
+			<img class="top"
+			     src="works/MonoRotor/monorotor.png"
+			     alt=""
+                             style="border:solid 3px #622569"/>
+			<span class="icon_title">
+			  MonoRotor
+			</span>
+		      </div>
+		      <div class="back"
+			   style="background:#622569;">
+			<ul style="list-style:none;">
+			  <li>
+			    <h2>
+			      Nonlinear Control Theory for MonoRotor
+		            </h2>
+			    <p>Periodic Motion Control for Monorotor
+			      type Flying Robot at Non-equilibrium
+			      Point via Zero Dynamics Controller
+			    </p>
+			  </li>
+			</ul>
+		      </div>
+		    </div>
+		  </a>
+		</div>
+	      </div>
+	    </div>
+	    <!-- end of row 1 -->
 
-	      <!-- Card : Acrobot Jumping -->
-	      <div class="container text-center">
-		<div class="col-sm-3 col-lg-3 col-md-3 col-xs-3
-			    single-portfolio robotics">
-		  <div class="card-container">
-		    <a href="#"  data-toggle="modal" data-target="#AcrobotJump">
+	    <!-- Card : Acrobot Jumping -->
+	    <div class="container text-center">
+	      <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3
+			  single-portfolio robotics">
+		<div class="card-container">
+		  <a href="#"  data-toggle="modal" data-target="#AcrobotJump">
 		      <div class="card_p">
 			<div class="front" style="text-align: center;">
 			  <img class="top"
