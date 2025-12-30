@@ -1,271 +1,702 @@
----
-permalink: /
----
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Yasu Kataoka</title>
+    <meta charset="UTF-8">
+    <title>Your Name</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ site.description }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="stylesheet" type="text/css" href="css/demo.css"/>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    
-    {% if site.favicon_img %}
-    <link rel="shortcut icon" href="{{ site.favicon_img_path }}" />
-    {% endif %}
-    
-    <link rel="stylesheet" href="{{ "css/front.css" | prepend: site.baseurl }}">    
-    <link href="https://fonts.googleapis.com/css?family=Cinzel:900|Exo+2:800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Kristi|Alegreya+Sans:300" rel='stylesheet' type='text/css'>  
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <script src="js/jquery-1.11.3.min.js"></script>
+    <meta name="description" content="Research webpage of Your Name">
 
-
-    <script type="text/javascript">
-    function myhref(web){
-      window.location.href = web;
-    }
-    
-//    var linkTouchStart = function(){
-//      thisAnchor = $(this);
-//      console.log(thisAnchor);
-//      touchPos = thisAnchor.offset().top;
-//      console.log('hoge');
-//      moveCheck = function(){
-//	console.log('in moveCheck');
-//        nowPos = thisAnchor.offset().top;
-//        if(touchPos == nowPos){
-////          thisAnchor.css("transform","rotateY(180deg)");
-//	}
-//      }
-//      setTimeout(
-//	moveCheck, 100);
-//    }
-//    
-//    var linkTouchEnd = function(){
-//      thisAnchor = $(this);
-//      hoverRemove = function(){
-//	console.log('in hoverRomove');
-//        thisAnchor.removeClass("hover");
-//      }
-//      setTimeout(hoverRemove,500);
-//    }
-//    
-//    $(document).on('touchstart','.card-container',linkTouchStart);
-//    $(document).on('touchend','.card-container',linkTouchEnd);
-
-    $(document).ready(function(){
-      $('div.card-container').on('touchstart', function (e) {
-	'use strict'; //satisfy code inspectors
-	var link = $(this).children('.card'); //preselect the link
-	console.log('hoge');
-        link.addClass('tapping');
-//        $('div.card').not(link).removeClass('tapping');
-//	e.preventDefault();
-
-	
-//	if (link.hasClass('tapping')) {
-//          return true;
-//	} else {
-//          return false;
-//	}
-
-//	if (link.hasClass('tapping')) {
-//          return true;
-//	} else {
-//          link.addClass('tapping');
-//          $('div.card').not(link).removeClass('tapping');
-//	  e.preventDefault();
-//          return false;
-//	}
-	
-      });
-    });
-    
-//    
-//    $(document).ready(function() {
-//      $('.hover').bind('touchstart touchend', function(e) {
-//        e.preventDefault();
-//        $(this).toggleClass('hover_effect');
-//      });
-//    });
-    
-    </script>
+    <style>
+      body {
+	  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	  line-height: 1.6;
+	  max-width: 960px;
+	  margin: 40px auto;
+	  padding: 0 20px;
+	  color: #222;
+      }
+      h1, h2 {
+	  line-height: 1.3;
+      }
+      h1 {
+	  font-size: 2.2em;
+	  margin-bottom: 0.2em;
+      }
+      h2 {
+	  font-size: 1.4em;
+	  margin-top: 2em;
+	  border-bottom: 1px solid #ddd;
+	  padding-bottom: 0.2em;
+      }
+      a {
+	  color: #0056b3;
+	  text-decoration: none;
+      }
+      a:hover {
+	  text-decoration: underline;
+      }
+      ul {
+	  padding-left: 20px;
+      }
+      .subtitle {
+	  color: #555;
+	  margin-bottom: 1.5em;
+      }
+      .footer {
+	  margin-top: 3em;
+	  font-size: 0.9em;
+	  color: #777;
+      }
+    </style>
   </head>
 
   <body>
-    <div class="content">
-      {% if site.front_img %}
-      <img src="{{ site.front_img_path }}" id="fullscreen">
-      {% endif %}
+
+    <h1>Yasuyuki Kataoka</h1>
+    <div class="subtitle">
+      <br>
+      Research Scientist, NTT Research, Inc.
+    </div>
+
+    <p>
+      My research addresses hemodynamic control problems through an integrated framework that combines cardiovascular modeling, pharmacological and device-based modeling, and advanced control algorithm design.
+      I conduct validation studies using both in-silico and in-vivo models, aiming to bridge methodological development and clinical application.
+      My work is motivated by clinical translation, with a particular focus on acute heart failure.
+      I am trained in control engineering and data science, with applications in biomedical systems.
+    </p>
+
+    <h2>Research Interests</h2>
+    <ul>
+      <li>Hemodynamic control and optimization</li>
+      <li>Cardiovascular modeling </li>
+      <li>Model-based and Data-driven Control Algorithm</li>
+      <li>Clinical decision support system</li>
+    </ul>
+
+    <h2>Journals/Transactions</h2>
+
+    <ul>
+      <!-- TBME26 -->
+      <li>
+	<strong>Y. Kataoka</strong>, K. Uemura, T. Nishikawa, Y. Fukuda, J. Peterson, K. Saku, M. Sampei, J. Alexander, and K. Sunagawa,
+	"Modeling Partial and Total Support of Left Ventricular Assist Device for Discrete Hemodynamic Control Framework,"
+	<em>IEEE Transactions on Biomedical Engineering</em>, 2026. (Under Review to <em>Special Issue “EMBC 2025 Top Papers”</em>)
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- OJEMB26 -->
+      <li>
+	<strong>Y. Kataoka</strong>, K. Uemura, T. Nishikawa, Y. Fukuda, J. Peterson, K. Sato, H. Matsushita, H. Morita, Y. Nakamura, M. Otake, K. Oba, N. Hiraki, K. Saku, M. Sampei, J. Alexander, and K. Sunagawa,
+	"In-Vivo Evaluation of Discrete Two-Degree-of-Freedom Hemodynamic Control System in Canine Heart Failure using Pulmonary Artery Catheter,"
+	<em>IEEE Open Journal of Engineering in Medicine and Biology</em>, 2026. (Under Review)
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- AJP-Regulatory (Under Review, 2025) -->
+      <li>
+	Y. Fukuda, T. Kawada, <strong>Y. Kataoka</strong>, J. Peterson, K. Saku, J. Alexander, and K. Sunagawa,
+	"Renal Hemodynamic and Urinary Response to Baroreflex-Mediated Sympathetic Modulation: Insights from High-Resolution Arterial Impedance Analysis in Rats,"
+	<em>American Journal of Physiology–Regulatory, Integrative and Comparative Physiology</em>, 2025. (Under Review)
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- Journal of Anesthesia (Under Review, 2025) -->
+      <li>
+	H. Matsushita, T. Nishikawa, K. Uemura, K. Sasaki, Y. Nakamura, K. Sato, H. Morita, K. Ohba, T. Kawada, <strong>Y. Kataoka</strong>, J. Alexander, and K. Saku,
+	"Automated Hemodynamic Management System for the Prevention of Hypotension and Cardiac Output Reduction During General Anesthesia: Preclinical Experimental Validation,"
+	<em>Journal of Anesthesia</em>, 2025. (Under Review)
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- TBME25 -->
+      <li>
+	<strong>Y. Kataoka</strong>, K. Uemura, M. Sampei, Y. Fukuda, J. Peterson, R. Funada, K. Saku, J. Alexander, and K. Sunagawa,
+	"A Discrete Hemodynamic Control Framework: Proof-of-Concept Study for Autonomous Drug Therapy in Acute Heart Failure,"
+	<em>IEEE Transactions on Biomedical Engineering</em>, 2025. (Accepted)
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- AJP-Heart (2025) -->
+      <li>
+	K. Sato, J. Peterson, K. Uemura, K. Ohba, T. Nishikawa, K. Sasaki, S. Yokota, H. Matsushita, H. Morita, Y. Yoshida, N. Hiraki, M. Otake, Y. Nakamura, M. Fukumitsu, T. Kawada, <strong>Y. Kataoka</strong>, J. Alexander, K. Sunagawa, and K. Saku,
+	"One Surface Fits All: Validating the Venous Return Model Across Species and Scales in Circulatory Equilibrium,"
+	<em>American Journal of Physiology–Heart and Circulatory Physiology</em>, 2025.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- ASAIO Journal (2024) -->
+      <li>
+	T. Unoki, K. Uemura, S. Yokota, H. Matsushita, M. Kakuuchi, H. Morita, K. Sato, Y. Yoshida, K. Sasaki, <strong>Y. Kataoka</strong>, T. Nishikawa, M. Fukumitsu, T. Kawada, K. Sunagawa, J. Alexander Jr., and K. Saku,
+	"Closed-loop Automated Control System of Extracorporeal Membrane Oxygenation and Left Ventricular Assist Device Support in Cardiogenic Shock,"
+	<em>ASAIO Journal</em>, 2024.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- AJP-Regulatory (2024) -->
+      <li>
+	Y. Fukuda, T. Kawada, <strong>Y. Kataoka</strong>, J. Peterson, K. Saku, J. Alexander, and K. Sunagawa,
+	"Influence of Angiotensin II and Telmisartan on In Vivo High-Resolution Renal Arterial Impedance in Rats,"
+	<em>American Journal of Physiology–Regulatory, Integrative and Comparative Physiology</em>,
+	2024, Vol. 327, No. 3, R349–R361.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- Frontiers in Veterinary Science (2023) -->
+      <li>
+	K. Sasaki, T. Kawada, H. Matsushita, S. Yokota, M. Kakuuchi, A. Yokoi, Y. Yoshida, H. Morita, K. Sato, T. Nishikawa, A. P. N. Kutter,
+	<strong>Y. Kataoka</strong>, J. Alexander Jr., K. Saku, T. Ishikawa, and K. Uemura,
+	"Computer-controlled Closed-loop Norepinephrine Infusion System for Automated Control of Mean Arterial Pressure in Dogs under Isoflurane-induced Hypotension: A Feasibility Study,"
+	<em>Frontiers in Veterinary Science</em>, 2023, Vol. 11.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IEEE TBME (2023) -->
+      <li>
+	S. Yokota, K. Uemura, T. Unoki, H. Matsushita, M. Kakuuchi, Y. Yoshida, K. Sasaki, T. Kawada, T. Nishikawa, <strong>Y. Kataoka</strong>, J. Peterson, K. Sunagawa, J. Alexander Jr., and K. Saku,
+	"Novel Closed-loop Control System of Dual Rotary Blood Pumps in Total Artificial Heart Based on the Circulatory Equilibrium Framework: A Proof-of-Concept In Vivo Study,"
+	<em>IEEE Transactions on Biomedical Engineering</em>, 2023, Vol. 71, No. 12, pp. 3358–3369.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- 人工知能学会論文誌 (2016) -->
+      <li>
+	<strong>片岡 泰之</strong>, 中辻 真, 戸田 浩之, 小池 義昌, 松尾 豊,
+	「LODとソーシャルメディアに基づく分野特有の行動オントロジーの構築と評価」,
+	<em>人工知能学会論文誌</em>, 31 巻 1 号, SP1-H, 2016.
+	[<a href="#">URL</a>]
+      </li>
+    </ul>
+
+
+
+
+
+
+
+
+    <h2>Conferences Proceedings</h2>
+    <ul>
+      <!-- ACC 2025 -->
+      <li>
+	<strong>Y. Kataoka</strong>, R. Funada, Y. Fukuda, K. Uemura, M. Sampei,
+	K. Sunagawa, K. Saku, and J. Peterson,
+	"Hybrid Hemodynamic Control System: A Clinically Feasible Design for Stabilizing Total Perfusion in Shock,"
+	<em>2025 American Control Conference</em>, 2025, pp. 2035–2040.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IEEE EMBC 2025 (Top 7%) -->
+      <li>
+	<strong>Y. Kataoka</strong>, Y. Fukuda, J. Peterson, K. Uemura, K. Saku,
+	R. Funada, M. Sampei, J. Alexander, and K. Sunagawa,
+	"Hemodynamic Regulation with Minimization of Myocardial Oxygen Consumption via Drugs and Left Ventricular Assist Device,"
+	<em>47th Annual International Conference of the IEEE Engineering in Medicine &amp; Biology Society</em>,
+	2025, pp. 1–6. (<strong>Top 7% of EMBC submissions</strong>)
+	[<a href="#">URL</a>]
+      </li>
+
+
+      <!-- IFAC NMPC 2024 -->
+      <li>
+	<strong>Y. Kataoka</strong>, R. Funada, K. Uemura, J. Peterson, K. Saku,
+	K. Sunagawa, M. Sampei, and J. Alexander,
+	"Patient-Specific Optimal Hemodynamic Control with Minimal Myocardial Oxygen Consumption,"
+	<em>Proceedings of the 8th IFAC Conference on Nonlinear Model Predictive Control</em>,
+	2024, Vol. 58, Issue 18, pp. 47–52.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IEEE EMBC 2024 -->
+      <li>
+	<strong>Y. Kataoka</strong>, Y. Fukuda, I. Shelly, J. Peterson, K. Uemura,
+	K. Saku, M. Sampei, J. Alexander, and K. Sunagawa,
+	"Discrete Two-Degree-of-Freedom Control for Hemodynamic Optimization: Circulatory Simulation Study with Baroreflex Variability,"
+	<em>46th Annual International Conference of the IEEE Engineering in Medicine and Biology Society</em>,
+	2024, pp. 1–6.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IEEE EMBC 2024 (CO monitor) -->
+      <li>
+	K. Uemura, T. Nishikawa, H. Matsushita, K. Sasaki, K. Sato,
+	S. Yokota, H. Morita, Y. Yoshida, M. Fukumitsu, T. Kawada,
+	<strong>Y. Kataoka</strong>, and K. Saku,
+	"Minimally Invasive Monitor of Cardiac Output Based on Machine-learning Analysis of the Pulse Contour of Peripheral Arterial Pressure,"
+	<em>46th Annual International Conference of the IEEE Engineering in Medicine and Biology Society</em>,
+	2024, pp. 1–6.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- Computing in Cardiology 2023 -->
+      <li>
+	<strong>Y. Kataoka</strong> and J. Peterson,
+	"Nonlinear Hemodynamic Control Design via Input-Output Linearization,"
+	<em>Proceedings of Computing in Cardiology</em>, 2023, pp. 1–4.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IEEE EMBC 2023 (ESPVR) -->
+      <li>
+	<strong>Y. Kataoka</strong>, Y. Fukuda, I. Shelly, J. Peterson, S. Yokota,
+	K. Uemura, K. Saku, J. Alexander, and K. Sunagawa,
+	"Inverse ESPVR Estimation with Singularity Avoidance via Constrained EDPVR Parameter Optimization,"
+	<em>45th Annual International Conference of the IEEE Engineering in Medicine and Biology Society</em>,
+	2023, pp. 1–6.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IEEE EMBC 2023 (4D Hemodynamics) -->
+      <li>
+	<strong>Y. Kataoka</strong>, Y. Fukuda, J. Peterson, S. Yokota, K. Uemura,
+	K. Saku, J. Alexander, and K. Sunagawa,
+	"Analytical Representation of Four-dimensional Hemodynamics for Drug Therapy Simulation in Acute Heart Failure Treatment,"
+	<em>45th Annual International Conference of the IEEE Engineering in Medicine and Biology Society</em>,
+	2023, pp. 1–6.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IEEE EMBC 2022 -->
+      <li>
+	<strong>Y. Kataoka</strong>, Y. Fukuda, I. Shelly, J. Peterson,
+	J. Alexander, and K. Sunagawa,
+	"System Design for Optimizing Drug Infusions Using Cardiovascular Space Mapping for Acute Heart Failure,"
+	<em>44th Annual International Conference of the IEEE Engineering in Medicine and Biology Society</em>,
+	2022, pp. 1388–1393.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IEEE EMBC 2021 -->
+      <li>
+	<strong>Y. Kataoka</strong> and H. Tomoike,
+	"Spatial Feature Extraction of Vectorcardiography via Minimum Volume Ellipsoid Enclosure in Classifying Left Ventricular Hypertrophy,"
+	<em>43rd Annual International Conference of the IEEE Engineering in Medicine and Biology Society</em>,
+	2021, pp. 625–628.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IEEE EMBC 2021 -->
+      <li>
+	Y. Fukuda, <strong>Y. Kataoka</strong>, H. Kodama, Y. Yasuno, and H. Tomoike,
+	"Tonometric Condition of Cellular Polypropylene Film Sensors in Measuring Arterial Pressure Waveform,"
+	<em>43rd Annual International Conference of the IEEE Engineering in Medicine and Biology Society</em>,
+	2021, pp. 7445–7449.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IEEE ICCE 2014 -->
+      <li>
+	<strong>Y. Kataoka</strong>, T. Watanabe, K. Tanaka, and T. Yamada,
+	"Consumer Device Recommendation Method for Web-Based Distributed Browsing,"
+	<em>2014 IEEE International Conference on Consumer Electronics</em>,
+	2014, pp. 87–88.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IEEE CDC 2013 -->
+      <li>
+	<strong>Y. Kataoka</strong>, K. Sekiguchi, and M. Sampei,
+	"Circle Motion Control of Trirotor UAV via Discrete Output Zeroing,"
+	<em>52nd IEEE Conference on Decision and Control</em>,
+	2013, pp. 226–231.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- WI-IAT 2013 -->
+      <li>
+	<strong>Y. Kataoka</strong>, T. Watanabe, K. Tanaka, and S. Higashino,
+	"Service Discovery Method Based on User Intent,"
+	<em>2013 IEEE/WIC/ACM International Joint Conference on Web Intelligence and Intelligent Agent Technologies</em>,
+	Vol. 1, 2013, pp. 473–480.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IFAC World Congress Proceedings 2011 -->
+      <li>
+	<strong>Y. Kataoka</strong>, K. Sekiguchi, and M. Sampei,
+	"Nonlinear Control and Model Analysis of Trirotor UAV Model,"
+	<em>IFAC Proceedings Volumes</em>,
+	Vol. 44, No. 1, 2011, pp. 10391–10396.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- SICE Annual Conference 2011 -->
+      <li>
+	<strong>Y. Kataoka</strong>, K. Sekiguchi, and M. Sampei,
+	"Periodic Motion Control for Monorotor-type Flying Robot at Non-equilibrium Point via Zero Dynamics Controller,"
+	<em>SICE Annual Conference 2011</em>,
+	Tokyo, Japan, 2011, pp. 1053–1056.
+	[<a href="#">URL</a>]
+      </li>
+
+    </ul>
+
+
+    <h2> Japanese Conferences</h2>
+    <ul>
+      <!-- JSMBE 2025 -->
+      <li>
+	Y. Fukuda, T. Kawada, <strong>Y. Kataoka</strong>, J. Peterson,
+	K. Saku, J. Alexander, and K. Sunagawa,
+	"Renal Hemodynamics Modeling for Cardiovascular Simulator,"
+	<em>The 64th Annual Conference of the Japanese Society for Medical and Biological Engineering</em>,
+	2025.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- JCS 2025 -->
+      <li>
+	K. Sato, J. Peterson, K. Uemura, K. Ohba, T. Nishikawa,
+	H. Matsushita, H. Morita, Y. Yoshida, N. Hiraki, M. Otake,
+	K. Sasaki, M. Fukumitsu, T. Kawada, <strong>Y. Kataoka</strong>,
+	J. Alexander, K. Sunagawa, and K. Saku,
+	"Validating the Venous Return Surface: Experimental Insights across Diverse Body Sizes in Circulatory Equilibrium,"
+	<em>The 89th Annual Scientific Meeting of the Japanese Circulation Society</em>,
+	2025.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- JSMBE 2024 (Japanese) -->
+      <li>
+	上村 和紀, 横田 翔平, 鵜木 崇, 松下 裕貴, 此内 緑, 吉田 祐季,
+	佐々木 一益, 川田 徹, 西川 拓也, <strong>片岡 泰之</strong>,
+	ピーターソン ジョン, 砂川 賢二, アレキサンダー ジョー, 朔 啓太,
+	「完全置換型人工心臓の循環平衡自動制御システムの開発」,
+	<em>The 63rd Annual Conference of the Japanese Society for Medical and Biological Engineering</em>,
+	2024.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- JSMBE 2022 -->
+      <li>
+	<strong>Y. Kataoka</strong>, Y. Fukuda, I. Shelly, J. Peterson,
+	J. Alexander, and K. Sunagawa,
+	"Drug Determined Reachability: Modeling and Analysis of Multiple Drug Infusions for Acute Heart Failure Treatment,"
+	<em>The 61st Annual Conference of the Japanese Society for Medical and Biological Engineering</em>,
+	2022, Vol. 60, p. 184.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- Web Intelligence & Interaction 2015 -->
+      <li>
+	<strong>片岡 泰之</strong>, 中辻 真, 戸田 浩之, 小池 義昌, 松尾 豊,
+	「特定状況下における実世界行動ネットワーク構築」,
+	<em>第5回 Webインテリジェンスとインタラクション研究会</em>, 2015.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- Web Intelligence & Interaction 2015 -->
+      <li>
+	<strong>片岡 泰之</strong>, Ayesha Shahzad, 山田 智広,
+	「意思決定を要する会議における貢献度推定技術」,
+	<em>第4回 Webインテリジェンスとインタラクション研究会</em>, 2015.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IPSJ Interaction 2013 -->
+      <li>
+	青木 良輔, 橋本 遼, 瀬古 俊一, <strong>片岡 泰之</strong>, 井原 雅行,
+	渡辺 昌洋, 小林 透,
+	「Drag&amp;Flick: タッチスクリーンを用いた視覚障がい者向け文字入力方式」,
+	<em>情報処理学会 インタラクション</em>, 2013.
+	[<a href="#">URL</a>]
+      </li>
+
+
+      <!-- IEICE Technical Report 2013 -->
+      <li>
+	<strong>片岡 泰之</strong>, 渡部 智樹, 田中 清, 東野 豪,
+	「モバイルアプリのファセット検索を実現するインデクシング手法」,
+	<em>電子情報通信学会 技術研究報告</em>, Vol. 112, pp. 27–32, 2013.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- Web Intelligence & Interaction 2013 -->
+      <li>
+	<strong>片岡 泰之</strong>, 渡部 智樹, 田中 清, 東野 豪,
+	「機能の特異性を考慮したサービスインデクシング手法と実装評価」,
+	<em>第2回 Webインテリジェンスとインタラクション研究会</em>, 2013.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- HCG Symposium 2013 -->
+      <li>
+	<strong>片岡 泰之</strong>, 瀬古 俊一, 青木 良輔, 橋本 遼,
+	井原 雅行, 渡辺 昌洋, 渡部 智樹, 小林 透,
+	「インテントの時系列変化を考慮したボランティアマッチング支援手法」,
+	<em>HCGシンポジウム</em>, 2013.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- HCG Symposium 2013 -->
+      <li>
+	青木 良輔, 橋本 遼, 瀬古 俊一, <strong>片岡 泰之</strong>,
+	井原 雅行, 渡辺 昌洋, 小林 透,
+	「マルチタッチスクリーンを用いた障がい者向け文字入力方式」,
+	<em>HCGシンポジウム</em>, 2013.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- ISCIE Research Meeting 2011 -->
+      <li>
+	<strong>片岡 泰之</strong>, 関口 和真, 三平 満司,
+	「不連続制御器を用いたMonoRotor飛行ロボットの非平衡点への周期安定化」,
+	<em>第55回 システム制御情報学会 研究会</em>, 2011.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- SICE Control Division Conference 2011 -->
+      <li>
+	<strong>片岡 泰之</strong>, 関口 和真, 三平 満司,
+	「Trirotor型UAVのシステム解析と非線形制御」,
+	<em>計測自動制御学会 第11回 制御部門大会</em>, 2011.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- SICE Control Division Conference 2009 -->
+      <li>
+	<strong>片岡 泰之</strong>, 中浦 茂樹, 三平 満司,
+	「ゼロダイナミクスを利用したAcrobotの跳躍着地運動の制御」,
+	<em>計測自動制御学会 第9回 制御部門大会</em>, 2009.
+	[<a href="#">URL</a>]
+      </li>  
+    </ul>
+
+
+    <h2>Invited Talks & Symposia</h2>
+    <ul>
+      <!-- IEEE EMBC 2026 -->
+      <li>
+	<strong>Y. Kataoka</strong>,
+	"A Discrete Hemodynamic Control Framework for Multi-Input Multi-Output Clinical Interventions in Acute Heart Failure,"
+	<em>48th Annual International Conference of the IEEE Engineering in Medicine and Biology Society</em>, 2026. (Mini-Symposia)
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- Strata Data Conference 2018 -->
+      <li>
+	<strong>Y. Kataoka</strong>,
+	"Real-time Machine Intelligence in IndyCar and Tour de France,"
+	<em>Strata Data Conference 2018</em>, 2018.
+	[<a href="#">URL</a>]
+      </li>
+    </ul>
+
+    <h2>Books/Lecture Notes</h2>
+    <ul>
+      <!-- ECML/PKDD Workshop 2018 / LNCS 2019 -->
+      <li>
+	<strong>Y. Kataoka</strong> and P. Gray,
+	"Real-time Power Performance Prediction in Tour de France,"
+	<em>5th International Workshop on Machine Learning and Data Mining for Sports Analytics (co-located with ECML/PKDD)</em>, 2018;
+	<em>Lecture Notes in Computer Science</em>, Vol. 11330, Springer, 2019, pp. 121–130.
+	[<a href="#">URL</a>]
+      </li>
+    </ul>
+
+    <h2>Posters</h2>
+    <ul>
+      <!-- American Physiology Summit 2025 -->
+      <li>
+	K. Sato, J. Peterson, K. Uemura, K. Oba, T. Nishikawa, S. Yokota,
+	H. Matsushita, H. Morita, Y. Yoshida, N. Hiraki, M. Otake, Y. Nakamura,
+	K. Sasaki, M. Fukumitsu, T. Kawada, <strong>Y. Kataoka</strong>,
+	J. Alexander, K. Sunagawa, and K. Saku,
+	"Validating the Venous Return Surface in Circulatory Equilibrium: Experimental Insights Across Species and Diverse Body Sizes,"
+	<em>American Physiology Summit 2025</em>, 2025.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- American Physiology Summit 2025 -->
+      <li>
+	Y. Fukuda, T. Kawada, J. Peterson, K. Saku, K. Sunagawa,
+	<strong>Y. Kataoka</strong>, and J. Alexander,
+	"Exploring Open-Loop Baroreflex Dynamics: A Comparison Between Female and Male Rats,"
+	<em>American Physiology Summit 2025</em>, 2025.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- American Physiology Summit 2024 -->
+      <li>
+	K. Sato, J. Peterson, K. Uemura, T. Nishikawa, S. Yokota,
+	H. Matsushita, H. Morita, Y. Yoshida, M. Fukumitsu, T. Kawada,
+	<strong>Y. Kataoka</strong>, J. Alexander, K. Sunagawa, and K. Saku,
+	"Allometric Scaling of the Parameters Characterizing the Venous Return Surface in the Generalized Framework of Circulatory Equilibrium,"
+	<em>American Physiology Summit 2024</em>, 2024.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- American Physiology Summit 2024 -->
+      <li>
+	Y. Fukuda, T. Kawada, <strong>Y. Kataoka</strong>, J. Peterson,
+	K. Saku, J. Alexander, and K. Sunagawa,
+	"The Effect of Baroreflex-induced Sympathetic Suppression on Renal Arterial Impedance in Rats,"
+	<em>American Physiology Summit 2024</em>, 2024.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IEEE EMBC 2023 -->
+      <li>
+	Y. Fukuda, <strong>Y. Kataoka</strong>, T. Kawada, J. Peterson,
+	K. Saku, J. Alexander, and K. Sunagawa,
+	"Estimation of Renal Arterial Resistances and Glomerular Capillary Pressure via High-Resolution Renal Arterial Impedance,"
+	<em>45th Annual International Conference of the IEEE Engineering in Medicine and Biology Society</em>,
+	2023.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- IEEE EMBC 2020 -->
+      <li>
+	<strong>Y. Kataoka</strong> and H. Tomoike,
+	"Does Diagnostic Sensitivity Depend on the Number of ECG Leads?,"
+	<em>42nd Annual International Conference of the IEEE Engineering in Medicine and Biology Society</em>,
+	2020.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- MIT Sports Analytics Conference 2017 -->
+      <li>
+	<strong>Y. Kataoka</strong> and D. Junkins,
+	"Mining Muscle Use Data for Fatigue Reduction in IndyCar,"
+	<em>2017 MIT Sports Analytics Conference</em>, 2017.
+	[<a href="#">URL</a>]
+      </li>
+
+      <!-- ACM GROUP 2014 -->
+      <li>
+	<strong>Y. Kataoka</strong>, A. Shahzad, and T. Yamada,
+	"Contribution Analysis in Group Work towards Automatic Facilitation System,"
+	<em>ACM GROUP</em>, 2014.
+	[<a href="#">URL</a>]
+      </li>
+    </ul>
+
+    <h2>Awards</h2>
+    <ul>
+      <!-- Travel Hackathon 2017 -->
+      <li>
+	Jet Blue Prize (175+ partipants),
+	<em>Travel Hackathon, Emirates and Carnegie Mellon Univesity</em>,
+	2017.
+      </li>
+
+      <!-- Prius Challenge 2017 -->
+      <li>
+	Best MPG Machine Learning Award (100+ partipants),
+	<em>Prius Challenge '17, Toyote Research Institute</em>,
+	2017.
+      </li>
       
-      {% if site.avatar %}
-      <img src="{{ site.avatar_img_path }}" id="avatar">
-      {% endif %}
+      <!-- Mercedes Benz 2016-->
+      <li>
+	2nd Prize (120+ partipants)
+	<em>Mercedes Benz Hackathon '16 - Silicon Valley</em>,
+	2016.
+      </li>
 
-      <h1 style="font-family: 'Cinzel', serif;font-size:48px;">{{ site.name }}</h1>
-      <h3 style="font-family: 'Exo 2', sans-serif;font-size:36px;">{{ site.description }}</h3>
-      <div class="container text-center">
+      <!-- Mylan Hackathon 2016 -->
+      <li>
+	1st Prize (300+ partiripants),
+	<em>Mylan Hackathon '16 - Bangalore</em>,
+	2016.
+      </li>
 
-	<!-- About Me -->
-	<div class="card-container"
-		onclick="myhref('aboutme.html');">
-	    <div class="card" >
-	      <div class="front" style="background:#C0C0C0;">
-		<span class="fa fa-user"
-			style="font-size: 180%"></span>
-	      </div>
-	      <div class="back" style="background:#C0C0C0;">
-		about me</div>
-	    </div>
-	</div>
-	</a>
-	
-	<!-- Achievement -->
-	<div class="card-container" onclick="myhref('achievement.html');">
-	  <div class="card">
-	    <div class="front" style="background:#32CD32">
-	      <span class="fa fa-search"
-		      style="font-size: 180%"></span>
-	    </div>
-	    <div class="back" style="background:#32CD32">
-	      explore me</div>
-	  </div>
-	</div>
+      <!-- Mylan Hackathon 2016 -->
+      <li>
+	1st Prize (250+ partiripants),
+	<em>Mylan Hackathon '16 - Pittsburgh</em>,
+	2016.
+      </li>
 
-	<!-- Project -->
-	<div class="card-container" onclick="myhref('project.html');">
-	  <div class="card">
-	    <div class="front">
-	      <span class="fa fa-archive"
-		      style="font-size: 180%"></span>
-	    </div>
-	    <div class="back">enjoy me</div>
-	  </div>
-	</div>
-	
-	<!-- github -->
-        {% if site.github_username %}
-	<div class="card-container" onclick="myhref('https://github.com/{{ site.github_username }}');">
-	  <div class="card">
-	    <div class="front" style="background:#000000;">
-	      <span class="fa fa-github"
-		      style="font-size: 200%"></span>
-	    </div>
-	    <div class="back" style="background:#000000;">
-	      fork me</div>
-	  </div>
-	</div>
-        {% endif %}
+      <!-- NTT Award 2014 -->
+      <li>
+	Excellent Research Award, 
+	<em>SIG Web Intelligence and Interaction Conference</em>,
+	2014.
+      </li>
 
-	<!-- Linkedin -->
-        {% if site.linkedin_username %}
-	<div class="card-container" onclick="myhref('https://linkedin.com/in/{{ site.linkedin_username }}');">
-	    <div class="card">
-	      <div class="front" style="background:#0077B5;">
-		<span class="fa fa-linkedin"
-			style="font-size: 180%"></span>
-	      </div>
-	      <div class="back" style="background:#0077B5;">
-		connect me</div>
-	    </div>
-	</div>
-        {% endif %}
+      <!-- NTT Award 2014 -->
+      <li>
+	Excellent Research Activity Award, 
+	<em>NTT Service Evolution Laboratories</em>,
+	2014.
+      </li>
 
-	
-	<!-- Blog -->
-	<!-- 
-        {% if site.blog_url %}
-	<div class="card-container" onclick="https://github.com/{{ site.blog_url }}">
-	  <div class="card">
-	    <div class="front" style="background:#FE1106;">
-	      <span class="fa fa-book"
-		      style="font-size: 200%"></span>
-	    </div>
-	    <div class="back" style="background:#FE1106;">
-	      read me</div>
-	  </div>
-	</div>
-        {% endif %}
-	-->
-	
-	<!-- Facebook -->
-        {% if site.facebook_username %}
-	<div class="card-container" onclick="myhref('https://facebook.com/{{ site.facebook_username }}')">
-	  <div class="card">
-	    <div class="front" style="background:#305097;">
-	      <span class="fa fa-2x fa-facebook"
-		      style="font-size: 170%"></span>
-	    </div>
-	    <div class="back" style="background:#305097;">
-	      add me</div>
-	  </div>
-	</div>
-        {% endif %}
-	
-	<!-- Flickr -->
-	<!-- 
-        {% if site.flickr_username %}
-	<div class="card-container" onclick="myhref('https://flickr.com/photos/{{ site.flickr_username }}')">
-	  <div class="card">
-	    <div class="front" style="background:#ff0084;">
-	      <span class="fa fa-camera"
-		      style="font-size: 180%"></span>
-	    </div>
-	    <div class="back"  style="background:#ff0084;">
-	      explore me</div>
-	  </div>
-	</div>
-        {% endif %}
-	-->
-	
-	<!-- Twitter -->
-        {% if site.twitter_username %}
-	<div class="card-container" onclick="myhref('https://twitter.com/{{ site.twitter_username }}')">
-	  <div class="card">
-	    <div class="front" style="background:#00aced;">
-	      <span class="fa fa-2x fa-twitter"
-		      style="font-size: 200%"></span>
-	    </div>
-	    <div class="back"  style="background:#00aced;">
-	      follow me</div>
-	  </div>
-	</div>
-        {% endif %}
-	
-	<!-- Mail -->
-        {% if site.email %}
-	<div class="card-container" onclick="myhref('mailto:{{ site.email }}');">
-	  <div class="card">
-	    <div class="front" style="background:#006400;">
-	      <span class="fa fa-2x fa-envelope"
-		      style="font-size: 150%"></span>
-	    </div>
-	    <div class="back" style="background:#006400;">
-	      contact me</div>
-	  </div>
-	</div>
-        {% endif %}
-	
-      </div>      
+      <!-- IDC 2006 -->
+      <li>
+	2nd Prize (40+ participants),
+	<em>NHK Robocon International Design Contest</em>,
+	2006.
+      </li>
+      
+    </ul>
+
+    <h2>Service / Professional Activities</h2>
+    <ul>
+      <!-- Editorial Service -->
+      <li>
+	Associate Editor,
+	<em>IET Journals</em>,
+	2019–present.
+      </li>
+
+      <!-- Professional Service -->
+      <li>
+	専門委員,
+	<em>SIG Webインテリジェンスとインタラクション研究会 / WebDBフォーラム研究会</em>,
+	2014–2015.
+      </li>
+    </ul>
+
+    
+    <h2>Education</h2>
+    <ol>
+      <li>
+	<strong>(Candidate) Ph.D. in Control Engineering</strong><br>
+	Institute of Science of Tokyo, Japan, TBD<br>
+	<em>Dissertation:</em> An Autonomous Hemodynamic Control Framework with In-Vivo Validation for Acute Heart Failure Management
+      </li>
+      <li>
+	<strong>M.Eng. in Control Engineering</strong><br>
+	Tokyo Institute of Technology, Japan, 2011 (Valedictorian)
+      </li>
+      <li>
+	<strong>Exchange Program</strong><br>
+	University of Waterloo, Canada, 2009
+      </li>
+      <li>
+	<strong>B.S. in Control Engineering</strong><br>
+	Tokyo Institute of Technology, Japan, 2008 (Early Graduation)
+      </li>
+    </ol>
+
+    <h2>Experience</h2>
+    <ol>
+      <li>
+	<strong>Research Scientist</strong><br>
+	NTT Research, Inc. / Medical and Health Informatics Laboratories, 2019-present<br>
+	Leading R&D on hemodynamic control system
+      </li>
+      <li>
+	<strong>Data Scientist</strong><br>
+	NTT Innovation Institute, Inc., 2015–2019<br>
+	Led biomedical data science projects in sports and automotive industry
+      </li>
+      <li>
+	<strong>Research Scientist</strong><br>
+	NTT R\&D / Service Evolution Laboratories, 2011–2015<br>
+	Worked machine learning projects in natural language processing
+      </li>
+    </ol>
+
+    <h2>Contact/Others</h2>
+    <p>
+      Email: yasuyuki.kataoka[at]ntt-research.com<br>
+      Scholar: <a href="https://scholar.google.co.jp/citations?user=P7NoBAsAAAAJ&hl=ja">Google Scholar</a><br>
+    </p>
+
+    <div class="footer">
+      Last updated: Dec 2025
     </div>
-    <!-- 
-    <footer style="
-		   width: 250px;
-		   height: 0px;
-		   margin-top: -60px;
-		   margin-right: auto;
-		   margin-left : auto;
-		   text-align: center;
-		   bottom: 0;
-		   ">
-      <p style="color:#909090; font-family: 'Exo 2', sans-serif;font-size:18px;">
-	Developed by Yasu Kataoka</p>
-    </footer>
-    -->
-    </div>
+
   </body>
 </html>

@@ -1,0 +1,271 @@
+---
+permalink: /
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Yasu Kataoka</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ site.description }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="stylesheet" type="text/css" href="css/demo.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    
+    {% if site.favicon_img %}
+    <link rel="shortcut icon" href="{{ site.favicon_img_path }}" />
+    {% endif %}
+    
+    <link rel="stylesheet" href="{{ "css/front.css" | prepend: site.baseurl }}">    
+    <link href="https://fonts.googleapis.com/css?family=Cinzel:900|Exo+2:800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kristi|Alegreya+Sans:300" rel='stylesheet' type='text/css'>  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+
+    <script type="text/javascript">
+    function myhref(web){
+      window.location.href = web;
+    }
+    
+//    var linkTouchStart = function(){
+//      thisAnchor = $(this);
+//      console.log(thisAnchor);
+//      touchPos = thisAnchor.offset().top;
+//      console.log('hoge');
+//      moveCheck = function(){
+//	console.log('in moveCheck');
+//        nowPos = thisAnchor.offset().top;
+//        if(touchPos == nowPos){
+////          thisAnchor.css("transform","rotateY(180deg)");
+//	}
+//      }
+//      setTimeout(
+//	moveCheck, 100);
+//    }
+//    
+//    var linkTouchEnd = function(){
+//      thisAnchor = $(this);
+//      hoverRemove = function(){
+//	console.log('in hoverRomove');
+//        thisAnchor.removeClass("hover");
+//      }
+//      setTimeout(hoverRemove,500);
+//    }
+//    
+//    $(document).on('touchstart','.card-container',linkTouchStart);
+//    $(document).on('touchend','.card-container',linkTouchEnd);
+
+    $(document).ready(function(){
+      $('div.card-container').on('touchstart', function (e) {
+	'use strict'; //satisfy code inspectors
+	var link = $(this).children('.card'); //preselect the link
+	console.log('hoge');
+        link.addClass('tapping');
+//        $('div.card').not(link).removeClass('tapping');
+//	e.preventDefault();
+
+	
+//	if (link.hasClass('tapping')) {
+//          return true;
+//	} else {
+//          return false;
+//	}
+
+//	if (link.hasClass('tapping')) {
+//          return true;
+//	} else {
+//          link.addClass('tapping');
+//          $('div.card').not(link).removeClass('tapping');
+//	  e.preventDefault();
+//          return false;
+//	}
+	
+      });
+    });
+    
+//    
+//    $(document).ready(function() {
+//      $('.hover').bind('touchstart touchend', function(e) {
+//        e.preventDefault();
+//        $(this).toggleClass('hover_effect');
+//      });
+//    });
+    
+    </script>
+  </head>
+
+  <body>
+    <div class="content">
+      {% if site.front_img %}
+      <img src="{{ site.front_img_path }}" id="fullscreen">
+      {% endif %}
+      
+      {% if site.avatar %}
+      <img src="{{ site.avatar_img_path }}" id="avatar">
+      {% endif %}
+
+      <h1 style="font-family: 'Cinzel', serif;font-size:48px;">{{ site.name }}</h1>
+      <h3 style="font-family: 'Exo 2', sans-serif;font-size:36px;">{{ site.description }}</h3>
+      <div class="container text-center">
+
+	<!-- About Me -->
+	<div class="card-container"
+		onclick="myhref('aboutme.html');">
+	    <div class="card" >
+	      <div class="front" style="background:#C0C0C0;">
+		<span class="fa fa-user"
+			style="font-size: 180%"></span>
+	      </div>
+	      <div class="back" style="background:#C0C0C0;">
+		about me</div>
+	    </div>
+	</div>
+	</a>
+	
+	<!-- Achievement -->
+	<div class="card-container" onclick="myhref('achievement.html');">
+	  <div class="card">
+	    <div class="front" style="background:#32CD32">
+	      <span class="fa fa-search"
+		      style="font-size: 180%"></span>
+	    </div>
+	    <div class="back" style="background:#32CD32">
+	      explore me</div>
+	  </div>
+	</div>
+
+	<!-- Project -->
+	<div class="card-container" onclick="myhref('project.html');">
+	  <div class="card">
+	    <div class="front">
+	      <span class="fa fa-archive"
+		      style="font-size: 180%"></span>
+	    </div>
+	    <div class="back">enjoy me</div>
+	  </div>
+	</div>
+	
+	<!-- github -->
+        {% if site.github_username %}
+	<div class="card-container" onclick="myhref('https://github.com/{{ site.github_username }}');">
+	  <div class="card">
+	    <div class="front" style="background:#000000;">
+	      <span class="fa fa-github"
+		      style="font-size: 200%"></span>
+	    </div>
+	    <div class="back" style="background:#000000;">
+	      fork me</div>
+	  </div>
+	</div>
+        {% endif %}
+
+	<!-- Linkedin -->
+        {% if site.linkedin_username %}
+	<div class="card-container" onclick="myhref('https://linkedin.com/in/{{ site.linkedin_username }}');">
+	    <div class="card">
+	      <div class="front" style="background:#0077B5;">
+		<span class="fa fa-linkedin"
+			style="font-size: 180%"></span>
+	      </div>
+	      <div class="back" style="background:#0077B5;">
+		connect me</div>
+	    </div>
+	</div>
+        {% endif %}
+
+	
+	<!-- Blog -->
+	<!-- 
+        {% if site.blog_url %}
+	<div class="card-container" onclick="https://github.com/{{ site.blog_url }}">
+	  <div class="card">
+	    <div class="front" style="background:#FE1106;">
+	      <span class="fa fa-book"
+		      style="font-size: 200%"></span>
+	    </div>
+	    <div class="back" style="background:#FE1106;">
+	      read me</div>
+	  </div>
+	</div>
+        {% endif %}
+	-->
+	
+	<!-- Facebook -->
+        {% if site.facebook_username %}
+	<div class="card-container" onclick="myhref('https://facebook.com/{{ site.facebook_username }}')">
+	  <div class="card">
+	    <div class="front" style="background:#305097;">
+	      <span class="fa fa-2x fa-facebook"
+		      style="font-size: 170%"></span>
+	    </div>
+	    <div class="back" style="background:#305097;">
+	      add me</div>
+	  </div>
+	</div>
+        {% endif %}
+	
+	<!-- Flickr -->
+	<!-- 
+        {% if site.flickr_username %}
+	<div class="card-container" onclick="myhref('https://flickr.com/photos/{{ site.flickr_username }}')">
+	  <div class="card">
+	    <div class="front" style="background:#ff0084;">
+	      <span class="fa fa-camera"
+		      style="font-size: 180%"></span>
+	    </div>
+	    <div class="back"  style="background:#ff0084;">
+	      explore me</div>
+	  </div>
+	</div>
+        {% endif %}
+	-->
+	
+	<!-- Twitter -->
+        {% if site.twitter_username %}
+	<div class="card-container" onclick="myhref('https://twitter.com/{{ site.twitter_username }}')">
+	  <div class="card">
+	    <div class="front" style="background:#00aced;">
+	      <span class="fa fa-2x fa-twitter"
+		      style="font-size: 200%"></span>
+	    </div>
+	    <div class="back"  style="background:#00aced;">
+	      follow me</div>
+	  </div>
+	</div>
+        {% endif %}
+	
+	<!-- Mail -->
+        {% if site.email %}
+	<div class="card-container" onclick="myhref('mailto:{{ site.email }}');">
+	  <div class="card">
+	    <div class="front" style="background:#006400;">
+	      <span class="fa fa-2x fa-envelope"
+		      style="font-size: 150%"></span>
+	    </div>
+	    <div class="back" style="background:#006400;">
+	      contact me</div>
+	  </div>
+	</div>
+        {% endif %}
+	
+      </div>      
+    </div>
+    <!-- 
+    <footer style="
+		   width: 250px;
+		   height: 0px;
+		   margin-top: -60px;
+		   margin-right: auto;
+		   margin-left : auto;
+		   text-align: center;
+		   bottom: 0;
+		   ">
+      <p style="color:#909090; font-family: 'Exo 2', sans-serif;font-size:18px;">
+	Developed by Yasu Kataoka</p>
+    </footer>
+    -->
+    </div>
+  </body>
+</html>
